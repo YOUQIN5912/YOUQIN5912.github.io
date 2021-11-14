@@ -82,13 +82,13 @@ analytics:
 author:
   name             : "Bo Jiang"
   avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
+  bio              : "Struggling Researcher"
   location         : "ORNL"
   employer         :
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.no/citations?user=8cRJIe4AAAAJ&hl=en"
   email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  researchgate     :  # example: "https://www.researchgate.net/profile/Bo-Jiang-37"
   uri              :
   bitbucket        :
   codepen          :
