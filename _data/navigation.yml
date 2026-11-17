@@ -1,22 +1,9 @@
-# main links links
 main:
+  - title: "About Me"
+    url: /about/
+  - title: "Research"
+    url: /research/
   - title: "Publications"
     url: /publications/
-
-  - title: "others"
-    url: /others/    
-
-  - title: "Learning"
-    url: /Learning/    
-    
-  - title: "Portfolio"
-    url: /portfolio/
-        
-  - title: "Blog Posts"
-    url: /year-archive/
-    
   - title: "CV"
     url: /cv/
-    
-  - title: "Guide"
-    url: /markdown/

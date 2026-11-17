@@ -1,59 +1,28 @@
 ---
-layout: archive
+layout: single
 title: "CV"
+excerpt: "Academic appointments, education and research expertise of Bo Jiang."
 permalink: /cv/
 author_profile: true
 redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+## Research appointments
 
-Education
-======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+- **University of Oslo, Norway** · Research in the Electrochemistry group, Department of Chemistry and Centre for Materials Science and Nanotechnology (SMN).
+- **Oak Ridge National Laboratory and the University of Tennessee, Knoxville, USA** · Research on local structure in functional materials using neutron scattering and atomistic modelling.
+- **Norwegian University of Science and Technology (NTNU), Trondheim, Norway** · Postdoctoral researcher in the Functional Materials and Materials Chemistry group (FACET).
 
-Work experience
-======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+## Education
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+- **PhD, University of Science and Technology Beijing, China** · Doctoral research in electrochemistry with Professor Hongmin Zhu.
 
-Publications
-======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+## Research methods
+
+- **Structural characterisation** · Synchrotron X-ray diffraction and absorption spectroscopy, neutron and X-ray total scattering, and pair distribution function analysis.
+- **Computational materials science** · Density functional theory, *ab initio* molecular dynamics and materials thermodynamics modelling.
+
+## Publications
+
+[Selected publications]({{ '/publications/' | relative_url }}) · [Google Scholar]({{ site.author.googlescholar }}) · [ORCID]({{ site.author.orcid }})

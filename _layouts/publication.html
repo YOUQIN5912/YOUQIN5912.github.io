@@ -1,0 +1,11 @@
+---
+layout: single
+---
+<p class="academic-publication__authors">{{ page.authors | escape }}</p>
+
+{% if page.details %}<p>{{ page.details | escape }}</p>{% endif %}
+
+{{ content }}
+
+<p><a class="btn academic-button" href="https://doi.org/{{ page.doi }}">View article at publisher</a></p>
+<p><a href="{{ '/publications/' | relative_url }}">Back to publications</a></p>

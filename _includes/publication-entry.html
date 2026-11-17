@@ -1,0 +1,10 @@
+<article class="academic-publication">
+  <h3><a href="{{ include.publication.url | relative_url }}">{{ include.publication.title | escape }}</a></h3>
+  {% if include.show_authors %}
+    <p>{{ include.publication.authors | escape }}</p>
+  {% endif %}
+  <p class="academic-publication__source">
+    <cite>{{ include.publication.venue | escape }}</cite> ({{ include.publication.date | date: "%Y" }}){% if include.publication.details %}, {{ include.publication.details | escape }}{% endif %}
+    <a class="academic-publication__doi" href="https://doi.org/{{ include.publication.doi }}" aria-label="DOI for {{ include.publication.title | escape }}">DOI</a>
+  </p>
+</article>
