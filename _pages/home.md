@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Materials for electrochemical energy"
-excerpt: "Bo Jiang studies structure, defects and reactions in functional materials at the University of Oslo."
+title: "Materials for functional and energy"
+excerpt: "Bo Jiang studies structure, defects and reactions in functional and energy materials."
 permalink: /
 author_profile: true
 ---
