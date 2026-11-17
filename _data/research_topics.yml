@@ -1,0 +1,22 @@
+- id: functional-materials
+  title: Complex functional and energy materials
+  summary: I study how composition, defects and redox conditions control the behaviour of functional oxides, from metal nanoparticle exsolution to proton uptake in ceramics.
+  papers:
+    - label: Point-defect control of metal nanoparticle exsolution
+      url: /publications/exsolution-point-defects/
+    - label: Nickel-induced defects and proton uptake in barium zirconate
+      url: /publications/nickel-induced-lattice-defects/
+- id: computational-materials
+  title: Computational materials science
+  summary: I use density functional theory, ab initio molecular dynamics and special quasirandom structures to model point defects, interfaces and chemical disorder.
+  papers:
+    - label: Quasirandom models of disordered Bi₀.₅K₀.₅TiO₃
+      url: /publications/quasirandom-structures-bkt/
+- id: local-structure
+  title: Local structure with X-rays and neutrons
+  summary: I combine synchrotron X-ray and neutron diffraction and total scattering with PDF and XAS analysis to resolve structural changes from the atomic to the nanoscale.
+  papers:
+    - label: Local disorder in pyrochlore high-entropy oxides
+      url: /publications/pyrochlore-high-entropy-oxides/
+    - label: The SnSe phase transition from neutron total scattering
+      url: /publications/structural-phase-transition-snse/

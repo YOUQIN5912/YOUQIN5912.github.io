@@ -1,0 +1,81 @@
+- id: diffraction
+  title: Diffraction and total scattering
+  items:
+    - name: TOPAS
+      description: Rietveld refinement of powder diffraction data and real-space fitting of atomic pair distribution functions.
+      links:
+        - label: TOPAS Academic
+          url: https://topas-academic.com/
+        - label: Bruker TOPAS
+          url: https://www.bruker.com/en/products-and-solutions/diffractometers-and-x-ray-microscopes/x-ray-diffractometers/diffrac-suite-software/diffrac-topas.html
+    - name: GSAS-II
+      description: Processing and structural refinement of X-ray and neutron diffraction data.
+      links:
+        - label: Documentation
+          url: https://gsasii.github.io/
+    - name: FullProf Suite
+      description: Profile fitting and Rietveld refinement of X-ray and neutron powder diffraction patterns.
+      links:
+        - label: Project site
+          url: https://www.ill.eu/en/for-ill-users/software-and-scientific-tools/software-scientific-tools/fullprof-suite/
+    - name: PDFgui
+      description: Refining structural models against X-ray and neutron pair distribution functions.
+      links:
+        - label: Documentation
+          url: https://www.diffpy.org/diffpy.pdfgui/
+    - name: RMCProfile
+      description: Large-box reverse Monte Carlo modelling constrained by scattering data.
+      links:
+        - label: Project site
+          url: https://rmcprofile.ornl.gov/
+
+- id: xas
+  title: X-ray absorption spectroscopy
+  items:
+    - name: Athena and Artemis
+      description: I use Athena to align and normalise XAS scans, and Artemis to fit EXAFS using FEFF scattering paths.
+      links:
+        - label: Athena docs
+          url: https://bruceravel.github.io/demeter/documents/Athena/index.html
+        - label: Artemis docs
+          url: https://bruceravel.github.io/demeter/documents/Artemis/index.html
+    - name: Larix
+      description: Interactive XANES and EXAFS processing, visualisation and analysis with XrayLarch.
+      links:
+        - label: Documentation
+          url: https://xraypy.github.io/xraylarch/larix.html
+
+- id: modelling
+  title: Atomistic modelling
+  items:
+    - name: VASP
+      description: Density functional theory calculations for structural relaxation and defect energetics, and ab initio molecular dynamics.
+      links:
+        - label: Documentation
+          url: https://vasp.at/wiki/
+    - name: CASTEP
+      description: Plane-wave DFT calculations for crystal structure and materials properties.
+      links:
+        - label: Project site
+          url: https://www.castep.org/
+    - name: Quantum ESPRESSO
+      description: Plane-wave pseudopotential DFT calculations for periodic materials.
+      links:
+        - label: Project site
+          url: https://www.quantum-espresso.org/
+
+- id: visualisation
+  title: Data analysis and visualisation
+  items:
+    - name: Python and Matplotlib
+      description: Reproducible data processing, comparison of experiments and simulations, and preparation of publication figures.
+      links:
+        - label: Python
+          url: https://www.python.org/
+        - label: Matplotlib
+          url: https://matplotlib.org/stable/
+    - name: VESTA
+      description: Visualising crystal structures, defects and atomistic supercells.
+      links:
+        - label: Project site
+          url: https://jp-minerals.org/vesta/en/
