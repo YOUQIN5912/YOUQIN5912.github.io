@@ -14,8 +14,8 @@ redirect_from:
     <div class="research-home__bio">
       <h1 id="bo-jiang">{{ site.author.name | escape }}</h1>
       <p class="research-home__affiliation">Materials researcher · University of Oslo</p>
-      <p>I study how atomic structure and defects govern the properties of crystalline, disordered and nanostructured materials. In the Electrochemistry group at the University of Oslo, I investigate redox exsolution and hydration in functional oxides for electrochemical energy conversion.</p>
-      <p>My work brings together synchrotron X-ray and neutron scattering, X-ray absorption spectroscopy, and atomistic modelling. I use these methods to connect local structure and chemical disorder to how materials behave.</p>
+      <p>My research focuses on how atomic structure and defects govern the properties of crystalline, disordered, and nanostructured materials, including  functional and energy materials, ferroelectrics, batteries, catalysts, and high-entropy ceramics, both bulk and nano. I am currently in the Electrochemistry group at the University of Oslo, where I investigate redox exsolution and hydration in functional oxides for electrochemical energy conversion.</p>
+      <p>My work brings together synchrotron X-ray and neutron crystallography, pair distribution function analysis,  X-ray absorption spectroscopy, and atomistic modelling by Density Functional Theory (DFT) and  Ab Initio Molecular Dynamics (AIMD) . I use these methods to link local structure and chemical disorder to material behavior.</p>
       <ul class="research-home__links" aria-label="Profiles and curriculum vitae">
         <li><a href="{{ site.author.uri }}">UiO profile</a></li>
         <li><a href="{{ site.author.googlescholar }}">Google Scholar</a></li>
