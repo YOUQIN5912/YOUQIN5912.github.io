@@ -75,3 +75,33 @@
   background: #eef5f3;
   border-color: var(--home-accent);
 }
+
+.software-channel{margin-top:1rem}
+.software-workshops{margin-top:clamp(2rem, 5vw, 3rem)}
+.activity-grid>.activity-card:only-child{grid-column:1 / -1}
+.activity-gallery{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));align-items:start;gap:1rem;margin:1.25rem 0}
+.activity-gallery figure{display:block;margin:0}
+.activity-gallery a{display:block}
+.activity-gallery img{display:block;width:100%;aspect-ratio:4 / 3;object-fit:contain;background:#f6f9f8;border-radius:0.35rem}
+.activity-gallery figcaption{margin-top:0.4rem;font-size:0.8rem;line-height:1.5}
+.software-tutorials{flex:0 0 100%;padding:0.75rem 0 0 0.85rem;border-left:2px solid var(--home-line)}
+.software-tutorials h4{margin:0 0 0.45rem;color:var(--home-ink);font-size:0.9rem}
+.software-tutorials ul{padding:0;margin:0;list-style:none}
+.software-tutorial{display:flex;flex-wrap:wrap;align-items:start;gap:0.7rem 1rem;scroll-margin-top:1rem}
+.software-tutorial+.software-tutorial{padding-top:0.65rem;margin-top:0.65rem;border-top:1px solid var(--home-line)}
+.software-tutorial__summary{flex:1 1 18rem}
+.software-tutorial__summary p+p{margin-top:0.25rem}
+.software-tutorial__meta,.activity-card__meta,.recent-update__meta{color:#4f6660;font-size:0.82rem}
+.software-tutorial__thumbnail{width:8.5rem;max-width:100%;aspect-ratio:16 / 9;object-fit:cover;border-radius:0.35rem}
+.software-tutorials .software-entry__links{margin-top:0.4rem}
+.activity-grid{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));align-items:start;gap:1.2rem;margin-top:1.5rem}
+.activity-card{overflow:hidden;border:1px solid var(--home-line);border-radius:0.65rem;scroll-margin-top:1rem}
+.activity-card__photo{display:block;margin:0}
+.activity-card__photo img{display:block;width:100%;aspect-ratio:4 / 3;object-fit:cover}
+.activity-card__photo figcaption{padding:0.45rem 1rem 0;font-size:0.8rem}
+.activity-card__body{padding:1rem}
+.research-home .activity-card h2{margin-bottom:0.25rem;font-size:1.15rem;line-height:1.3}
+.activity-card__body p{margin:0.5rem 0}
+.research-home__updates{margin-top:clamp(1.8rem, 4vw, 3rem)}
+@media (max-width: 42rem){.activity-grid,.activity-gallery{grid-template-columns:1fr}
+}

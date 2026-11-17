@@ -8,7 +8,47 @@ author_profile: false
 
 <main id="main-content" class="research-home site-inner">
   <h1>Software</h1>
-  <p class="site-inner__intro">Tools I use for structural characterisation, atomistic modelling, and data analysis.</p>
+  <p class="site-inner__intro">Tools I use for structural characterisation, atomistic modelling, and data analysis. I share practical SOPs, tutorials and workshop notes below, covering workflows from laboratory diffraction to synchrotron PDF and XAS.</p>
+<p class="software-channel">
+<a href="https://www.youtube.com/@qinyou7272">Visit my YouTube channel · @qinyou7272</a>
+</p>
+<section class="software-workshops" aria-labelledby="workshop-materials">
+<h2 id="workshop-materials">Tutorials &amp; workshop materials</h2>
+<div class="software-tutorials">
+<ul>
+<li class="software-tutorial" id="fit2d-macro-video">
+<div class="software-tutorial__summary">
+<p>
+<strong>Fit2D macros for diffraction data reduction</strong>
+</p>
+<p>A short demonstration of using a Fit2D macro for diffraction data reduction.</p>
+<p class="software-tutorial__meta"> Shared <time datetime="2026-11-17">17 Nov 2026</time>
+</p>
+<ul class="software-entry__links" aria-label="Resources for Fit2D macros for diffraction data reduction">
+<li>
+<a href="https://www.youtube.com/watch?v=rCrD9djcPpM">Watch on YouTube</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="software-tutorial" id="xrd-pdf-xas-workshop">
+<div class="software-tutorial__summary">
+<p>
+<strong>Mastering materials characterization — from lab XRD to synchrotron XAS/PDF</strong>
+</p>
+<p>Workshop slides introducing Rietveld refinement, TOPAS, pair distribution functions and X-ray absorption spectroscopy, with BM01/BM31 data-processing examples and a hands-on TOPAS Launch Mode exercise.</p>
+<p class="software-tutorial__meta"> Shared <time datetime="2026-11-17">17 Nov 2026</time>
+</p>
+<ul class="software-entry__links" aria-label="Resources for Mastering materials characterization — from lab XRD to synchrotron XAS/PDF">
+<li>
+<a href="/files/sops/XRD_PDF_XAS_workshop_Bo_final.pdf" download="">Download slides (PDF)</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</section>
 
   {% for group in site.data.software %}
   <section class="software-group" aria-labelledby="{{ group.id }}">
@@ -27,6 +67,7 @@ author_profile: false
           {% endfor %}
         </ul>
         {% endif %}
+        {{ site.data.software_tutorials[item.name] }}
       </li>
       {% endfor %}
     </ul>

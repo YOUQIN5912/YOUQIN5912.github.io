@@ -54,4 +54,15 @@ redirect_from:
     </ul>
     <a class="research-home__all-publications" href="{{ '/publications/' | relative_url }}">All publications <span aria-hidden="true">→</span></a>
   </section>
+<section class="research-home__updates" aria-labelledby="recent-updates">
+<h2 id="recent-updates">Recent updates</h2>
+<ul class="research-home__selected-list">
+<li> <a href="/software/#fit2d-macro-video">Fit2D macros for diffraction data reduction</a> <span class="recent-update__meta">Workshop materials · <time datetime="2026-11-17">17 Nov 2026</time> </span>
+</li>
+<li> <a href="/software/#rmcprofile-video">Running RMCProfile fits</a> <span class="recent-update__meta">RMCProfile · <time datetime="2026-11-17">17 Nov 2026</time> </span>
+</li>
+<li> <a href="/software/#artemis-exafs-video">EXAFS fitting in Artemis</a> <span class="recent-update__meta">Athena and Artemis · <time datetime="2026-11-17">17 Nov 2026</time> </span>
+</li>
+</ul>
+</section>
 </main>
