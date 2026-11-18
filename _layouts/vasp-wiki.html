@@ -48,7 +48,7 @@ layout: default
     {% elsif page.wiki_id == 'software-and-resources' %}
     <aside class="wiki-editor-note"><strong>Recovery note</strong><p>The IDPP example contains the original joined statement <code>sort_tol=1.0)new_path</code>. It is preserved for fidelity and is not executable as shown. The CatMAP screenshot is cropped in the supplied backup.</p></aside>
     {% endif %}
-    <div class="wiki-content">{{ content }}</div>
+    <div class="wiki-content">{% if page.wiki_id == "index" %}{% include vasp-wiki-overview-note.html %}{% endif %}{{ content }}</div>
     {% if archive %}
     <footer class="wiki-article-footer">
       <a href="{{ '/files/vasp-wiki/wikitext/' | append: archive.id | append: '.wiki' | relative_url }}" download>Download original wikitext</a>
