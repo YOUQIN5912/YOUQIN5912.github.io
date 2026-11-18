@@ -1,0 +1,728 @@
+{
+  "articles": [
+    {
+      "id": "index",
+      "title": "Overview",
+      "original_title": "Main Page",
+      "url": "/vasp-wiki/",
+      "revision": "100",
+      "updated": "2022-03-09T13:20:23Z",
+      "editor": "Jpolfus@uio.no",
+      "headings": [
+        {
+          "id": "getting-started-with-mediawiki",
+          "title": "Getting started with MediaWiki",
+          "level": 2
+        }
+      ],
+      "code_blocks": [],
+      "source_sha256": "a0c5a2f269098c200dab2acdcc9bbaf63810665723e116da6127baab096b437a"
+    },
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "original_title": "Getting started",
+      "url": "/vasp-wiki/getting-started/",
+      "revision": "157",
+      "updated": "2023-11-03T11:38:40Z",
+      "editor": "Jpolfus@uio.no",
+      "headings": [
+        {
+          "id": "user-access",
+          "title": "User access",
+          "level": 2
+        },
+        {
+          "id": "login",
+          "title": "Login",
+          "level": 2
+        },
+        {
+          "id": "ssh-and-scp",
+          "title": "ssh and scp",
+          "level": 3
+        },
+        {
+          "id": "putty-and-winscp",
+          "title": "PuTTY and WinSCP",
+          "level": 3
+        },
+        {
+          "id": "working-in-unix",
+          "title": "Working in UNIX",
+          "level": 2
+        },
+        {
+          "id": "basic-commands",
+          "title": "Basic commands",
+          "level": 3
+        },
+        {
+          "id": "filesystem-on-saga",
+          "title": "Filesystem on Saga",
+          "level": 3
+        },
+        {
+          "id": "logfile",
+          "title": "Logfile",
+          "level": 3
+        },
+        {
+          "id": "job-script",
+          "title": "Job script",
+          "level": 3
+        },
+        {
+          "id": "aliases-and-settings",
+          "title": "Aliases and settings",
+          "level": 3
+        },
+        {
+          "id": "shell-scripting",
+          "title": "Shell scripting",
+          "level": 3
+        },
+        {
+          "id": "first-vasp-calculation",
+          "title": "First VASP calculation",
+          "level": 2
+        }
+      ],
+      "code_blocks": [
+        {
+          "language": "bash",
+          "text": " ssh [username]@saga.sigma2.no "
+        },
+        {
+          "language": "bash",
+          "text": " vim ~/.ssh/config "
+        },
+        {
+          "language": "bash",
+          "text": "Host saga\n   HostName = saga.sigma2.no\n   user [username]"
+        },
+        {
+          "language": "bash",
+          "text": " ssh saga "
+        },
+        {
+          "language": "bash",
+          "text": " scp saga:[path]/[filename] . "
+        },
+        {
+          "language": "bash",
+          "text": " scp [filename] saga: "
+        },
+        {
+          "language": "bash",
+          "text": " /cluster/home/[username] "
+        },
+        {
+          "language": "bash",
+          "text": " /cluster/projects/[project number]/[username] "
+        },
+        {
+          "language": "bash",
+          "text": " dusage "
+        },
+        {
+          "language": "bash",
+          "text": " du -hs "
+        },
+        {
+          "language": "bash",
+          "text": " find . -name \"[filename]\" -exec rm {} \\; "
+        },
+        {
+          "language": "bash",
+          "text": " sbatch jobfile "
+        },
+        {
+          "language": "bash",
+          "text": " squeue -u [username] \n squeue -p [project number] "
+        },
+        {
+          "language": "bash",
+          "text": "/cluster/projects/nn4604k/jobfile"
+        },
+        {
+          "language": "bash",
+          "text": "module restore system\nmodule load VASPModules\nmodule load VASP/6.4.1-intel-2022b-std-wannier90-libxc-hdf5-beef-0a928426e459cf2aeab3d0bf8f441c74\n# module load VASP/6.4.1-intel-2022b-gam-wannier90-libxc-hdf5-beef-0a928426e459cf2aeab3d0bf8f441c74"
+        },
+        {
+          "language": "bash",
+          "text": "module avail"
+        },
+        {
+          "language": "bash",
+          "text": "cp [filenames] $SCRATCH\nif [ -f WAVECAR ]\nthen\ncp WAVECAR $SCRATCH\nfi"
+        },
+        {
+          "language": "bash",
+          "text": "savefile [filenames] "
+        },
+        {
+          "language": "bash",
+          "text": "cd $SCRATCH\ntime srun vasp"
+        },
+        {
+          "language": "bash",
+          "text": "#!/bin/bash\n\n#SBATCH --job-name=jobname\n#SBATCH --account=nn4604k\n#SBATCH --time=10:00:00\n#SBATCH --mem-per-cpu=4000M\n#SBATCH --nodes=1\n#SBATCH --ntasks-per-node=40\n\nset -o errexit \nset -o nounset\n\nmodule restore system\nmodule load VASPModules\nmodule load VASP/6.4.1-intel-2022b-std-wannier90-libxc-hdf5-beef-0a928426e459cf2aeab3d0bf8f441c74\n# module load VASP/6.4.1-intel-2022b-gam-wannier90-libxc-hdf5-beef-0a928426e459cf2aeab3d0bf8f441c74\n\ncp INCAR POSCAR POTCAR KPOINTS $SCRATCH\nif [ -f WAVECAR ]\nthen\ncp WAVECAR $SCRATCH\nfi\n\nsavefile CONTCAR OUTCAR DOSCAR CHGCAR WAVECAR \n\ncd $SCRATCH\ntime srun vasp"
+        },
+        {
+          "language": "bash",
+          "text": "alias l='ls -l'\nalias la='ls -l -a'\nalias ..='cd ..'\nalias nn='cd /cluster/projects/[project number]'\nalias q='squeue -u [username]'"
+        },
+        {
+          "language": "bash",
+          "text": "set number"
+        },
+        {
+          "language": "bash",
+          "text": "#!/bin/bash\n\nfor i in $(seq 0.0 0.2 1.4); do\n   for j in $(seq 0.0 0.2 1.4); do\n      dir=\"$i-$j\"\n      echo $dir\n      mkdir $dir\n      cp INCAR POTCAR KPOINTS jobfile $dir\n      cp \"prefix_$dir.POSCAR.vasp\" $dir/POSCAR\n      cd $dir\n      sbatch jobfile\n      cd ..\n   done\ndone"
+        },
+        {
+          "language": "bash",
+          "text": " mkdir [username] "
+        },
+        {
+          "language": "bash",
+          "text": " cd [username] "
+        },
+        {
+          "language": "bash",
+          "text": " mkdir test "
+        },
+        {
+          "language": "bash",
+          "text": " cd test "
+        },
+        {
+          "language": "bash",
+          "text": " cp ../../vasptest/* . "
+        },
+        {
+          "language": "bash",
+          "text": " cp ../../potpaw_PBE.54/Ba_sv/POTCAR POTCAR_Ba_sv "
+        },
+        {
+          "language": "bash",
+          "text": " cp ../../potpaw_PBE.54/Zr_sv/POTCAR POTCAR_Zr_sv "
+        },
+        {
+          "language": "bash",
+          "text": " cp ../../potpaw_PBE.54/O/POTCAR POTCAR_O "
+        },
+        {
+          "language": "bash",
+          "text": " head POSCAR "
+        },
+        {
+          "language": "bash",
+          "text": " cat POTCAR_Ba_sv POTCAR_Zr_sv POTCAR_O > POTCAR "
+        },
+        {
+          "language": "bash",
+          "text": " grep TITEL POTCAR "
+        },
+        {
+          "language": "bash",
+          "text": " cp ../../jobfile . "
+        },
+        {
+          "language": "bash",
+          "text": " sbatch jobfile "
+        },
+        {
+          "language": "bash",
+          "text": " squeue -u [username] "
+        },
+        {
+          "language": "bash",
+          "text": " less slurm-[slurm-id] "
+        },
+        {
+          "language": "text",
+          "text": "3 F= -.41724097E+02 E0= -.41724097E+02  d E =-.431449E-02\ncurvature:  -0.24 expect dE=-0.515E-06 dE for cont linesearch -0.515E-06\ntrial: gam= 0.00000 g(F)=  0.940E-64 g(S)=  0.213E-05 ort =-0.198E-03 (trialstep = 0.895E+00)\nsearch vector abs. value=  0.213E-05\nreached required accuracy - stopping structural energy minimisation\nwriting wavefunctions"
+        },
+        {
+          "language": "text",
+          "text": " head POSCAR \n\nBaZrO3                           \n  1.00000000000000     \n    4.2200000000000000    0.0000000000000000    0.0000000000000000\n    0.0000000000000000    4.2200000000000000    0.0000000000000000\n    0.0000000000000000    0.0000000000000000    4.2200000000000000\n...\n head CONTCAR \n\nBaZrO3                                  \n  1.00000000000000     \n    4.2353879522908331   -0.0000000000000000   -0.0000000000000000\n    0.0000000000000000    4.2353879522908331   -0.0000000000000000\n    0.0000000000000000   -0.0000000000000000    4.2353879522908331\n..."
+        }
+      ],
+      "source_sha256": "f5869d6fecc1e3dc204305e58fcf60efe8bc9bea139dbbb280a22d7eb91cdd5f"
+    },
+    {
+      "id": "computational-methods",
+      "title": "Computational Methods",
+      "original_title": "Methods",
+      "url": "/vasp-wiki/computational-methods/",
+      "revision": "158",
+      "updated": "2025-06-20T09:37:37Z",
+      "editor": "Martitom@uio.no",
+      "headings": [
+        {
+          "id": "vasp-wiki-and-support-forum",
+          "title": "VASP Wiki and Support Forum",
+          "level": 2
+        },
+        {
+          "id": "convergence-and-efficiency",
+          "title": "Convergence and Efficiency",
+          "level": 2
+        },
+        {
+          "id": "convergence-tests",
+          "title": "Convergence tests",
+          "level": 3
+        },
+        {
+          "id": "benchmark",
+          "title": "Benchmark",
+          "level": 3
+        },
+        {
+          "id": "general-calculations-and-relaxation",
+          "title": "General calculations and relaxation",
+          "level": 2
+        },
+        {
+          "id": "systems",
+          "title": "Systems",
+          "level": 2
+        },
+        {
+          "id": "supercells",
+          "title": "Supercells",
+          "level": 3
+        },
+        {
+          "id": "surfaces-and-slabs",
+          "title": "Surfaces and slabs",
+          "level": 3
+        },
+        {
+          "id": "grain-boundaries-and-interfaces",
+          "title": "Grain boundaries and interfaces",
+          "level": 3
+        },
+        {
+          "id": "disordered-structures",
+          "title": "Disordered structures",
+          "level": 3
+        },
+        {
+          "id": "defect-calculations",
+          "title": "Defect calculations",
+          "level": 2
+        },
+        {
+          "id": "charge-correction",
+          "title": "Charge correction",
+          "level": 3
+        },
+        {
+          "id": "defect-configurations",
+          "title": "Defect configurations",
+          "level": 3
+        },
+        {
+          "id": "vibrational-frequencies",
+          "title": "Vibrational frequencies",
+          "level": 2
+        },
+        {
+          "id": "phonon-calculations",
+          "title": "Phonon calculations",
+          "level": 2
+        },
+        {
+          "id": "nudged-elastic-band-neb",
+          "title": "Nudged Elastic Band (NEB)",
+          "level": 2
+        },
+        {
+          "id": "polaron-localization",
+          "title": "Polaron localization",
+          "level": 2
+        },
+        {
+          "id": "bader-charge-analysis",
+          "title": "Bader charge analysis",
+          "level": 2
+        },
+        {
+          "id": "error-messages",
+          "title": "Error messages",
+          "level": 2
+        },
+        {
+          "id": "references",
+          "title": "References",
+          "level": 2
+        }
+      ],
+      "code_blocks": [
+        {
+          "language": "ini",
+          "text": "IMAGES = 1\nSPRING = -5\nLCLIMB = .TRUE."
+        },
+        {
+          "language": "bash",
+          "text": "module load VASP/5.4.4-intel-2019a-std-vtst\ncp -r 00 01 02 $SCRATCH\nsavefile 01/CONTCAR 01/OUTCAR 01/DOSCAR 01/CHGCAR 01/WAVECAR"
+        },
+        {
+          "language": "bash",
+          "text": "for i in {01..05}; do\n    for file in CONTCAR OUTCAR DOSCAR CHGCAR WAVECAR; do\n        cleanup cp $i/$file $SLURM_SUBMIT_DIR/$i/$file\n    done\ndone"
+        },
+        {
+          "language": "ini",
+          "text": "LPARD = T"
+        },
+        {
+          "language": "ini",
+          "text": "IBAND = XX, the band where you localized polaron is."
+        },
+        {
+          "language": "ini",
+          "text": "PREC = A"
+        },
+        {
+          "language": "ini",
+          "text": "LAECHG = T"
+        },
+        {
+          "language": "bash",
+          "text": "  chgsum.pl AECCAR0 AECCAR2"
+        },
+        {
+          "language": "bash",
+          "text": "  bader CHGCAR -ref CHGCAR_sum"
+        }
+      ],
+      "source_sha256": "e779af534ab277a22db3805b0fc0ca36024f7bdb7aec707c972dc9863069c214"
+    },
+    {
+      "id": "software-and-resources",
+      "title": "Software & Resources",
+      "original_title": "Software and resources",
+      "url": "/vasp-wiki/software-and-resources/",
+      "revision": "150",
+      "updated": "2023-08-25T09:37:49Z",
+      "editor": "Jpolfus@uio.no",
+      "headings": [
+        {
+          "id": "installation-on-saga",
+          "title": "Installation on Saga",
+          "level": 2
+        },
+        {
+          "id": "structure-and-crystallography",
+          "title": "Structure and crystallography",
+          "level": 2
+        },
+        {
+          "id": "icsd-database",
+          "title": "ICSD database",
+          "level": 3
+        },
+        {
+          "id": "materials-project",
+          "title": "Materials project",
+          "level": 3
+        },
+        {
+          "id": "international-tables-for-crystallography",
+          "title": "International Tables for Crystallography",
+          "level": 3
+        },
+        {
+          "id": "shannon-ionic-radii",
+          "title": "Shannon Ionic Radii",
+          "level": 3
+        },
+        {
+          "id": "binding-energies-of-molecules",
+          "title": "Binding energies of molecules",
+          "level": 3
+        },
+        {
+          "id": "catalysis",
+          "title": "Catalysis",
+          "level": 2
+        },
+        {
+          "id": "catalysis-hub",
+          "title": "Catalysis Hub",
+          "level": 3
+        },
+        {
+          "id": "visualization",
+          "title": "Visualization",
+          "level": 2
+        },
+        {
+          "id": "vesta",
+          "title": "VESTA",
+          "level": 3
+        },
+        {
+          "id": "avogadro",
+          "title": "Avogadro",
+          "level": 3
+        },
+        {
+          "id": "diamond",
+          "title": "Diamond",
+          "level": 3
+        },
+        {
+          "id": "vmd",
+          "title": "VMD",
+          "level": 3
+        },
+        {
+          "id": "p4vasp",
+          "title": "P4vasp",
+          "level": 3
+        },
+        {
+          "id": "ovito",
+          "title": "OVITO",
+          "level": 3
+        },
+        {
+          "id": "escher",
+          "title": "Escher",
+          "level": 3
+        },
+        {
+          "id": "packages",
+          "title": "Packages",
+          "level": 2
+        },
+        {
+          "id": "spyder",
+          "title": "Spyder",
+          "level": 3
+        },
+        {
+          "id": "atomic-simulation-environment-ase",
+          "title": "Atomic Simulation Environment (ASE)",
+          "level": 3
+        },
+        {
+          "id": "vaspkit",
+          "title": "VASPKIT",
+          "level": 3
+        },
+        {
+          "id": "catmap",
+          "title": "CatMAP",
+          "level": 3
+        },
+        {
+          "id": "input-file-structure",
+          "title": "Input File Structure",
+          "level": 4
+        },
+        {
+          "id": "creating-a-microkinetic-model",
+          "title": "Creating a Microkinetic Model",
+          "level": 4
+        },
+        {
+          "id": "phonopy-and-phono3py",
+          "title": "Phonopy and Phono3py",
+          "level": 3
+        },
+        {
+          "id": "tdep",
+          "title": "TDEP",
+          "level": 3
+        },
+        {
+          "id": "supercell",
+          "title": "Supercell",
+          "level": 3
+        },
+        {
+          "id": "icet",
+          "title": "Icet",
+          "level": 3
+        },
+        {
+          "id": "spinney",
+          "title": "Spinney",
+          "level": 3
+        },
+        {
+          "id": "sumo",
+          "title": "SUMO",
+          "level": 3
+        },
+        {
+          "id": "pymatgen",
+          "title": "Pymatgen",
+          "level": 3
+        },
+        {
+          "id": "atomsk",
+          "title": "Atomsk",
+          "level": 3
+        },
+        {
+          "id": "references",
+          "title": "References",
+          "level": 2
+        }
+      ],
+      "code_blocks": [
+        {
+          "language": "bash",
+          "text": "module load Python/3.9.6-GCCcore-11.2.0\npip install sumo\npip install --upgrade https://github.com/SUNCAT-Center/catmap/zipball/master"
+        },
+        {
+          "language": "bash",
+          "text": "Objects > Properties > Atoms/Bonds/Polyhedra\nSpecular: 40 40 40\nShininess (%): 1 \n\nView > Overall Appearance...\nAmbient: 10\nDiffuse: 70"
+        },
+        {
+          "language": "bash",
+          "text": "module avail ase "
+        },
+        {
+          "language": "python",
+          "text": "#!/opt/local/bin/python\nfrom ase.io import read\nfrom ase.io import write\nfrom ase.build import fcc111\nfrom ase.build import fcc100\nfrom ase.build import fcc111_root\n\nslab = fcc111_root('Pd', 3, size=(1,2,7), a=3.9438731474981594, vacuum=5.0)\n\nwrite('Pd-111.cif', slab, 'cif')"
+        },
+        {
+          "language": "bash",
+          "text": "pip install --upgrade https://github.com/SUNCAT-Center/catmap/zipball/master"
+        },
+        {
+          "language": "bash",
+          "text": "export PYTHONPATH=$HOME/THIS_FOLDER_PATH:$PYTHONPATH"
+        },
+        {
+          "language": "python",
+          "text": "rxn_expressions = [               '*_s + CO_g -> CO*',               '2*_s + O2_g <-> O-O* + *_s -> 2O*',               'CO* +  O* <-> O-CO* + * -> CO2_g + 2*',                   ] "
+        },
+        {
+          "language": "bash",
+          "text": "module purge\nmodule load Anaconda3/2019.03\nmodule load intel/2018b\nmodule load imkl/2018.3.222-iimpi-2018b\nmodule load HDF5/1.10.2-intel-2018b"
+        },
+        {
+          "language": "text",
+          "text": " Sr1 Ti1 O3\n 1.0\n 3.945130 0.000000 0.000000\n 0.000000 3.945130 0.000000\n 0.000000 0.000000 3.945130\n ALLOY Ti O\n 1 1 3\n direct\n 0.000000 0.000000 0.000000 2 Sr 0.52 Ca 0.48\n 0.500000 0.500000 0.500000\n 0.500000 0.000000 0.500000\n 0.500000 0.500000 0.000000\n 0.000000 0.500000 0.500000"
+        },
+        {
+          "language": "bash",
+          "text": " generate_structure -d 2 2 2 "
+        },
+        {
+          "language": "python",
+          "text": " from ase import Atom\n from ase.build import bulk\n from icet import ClusterSpace\n from icet.tools.structure_generation import (generate_sqs,\n                                            generate_sqs_from_supercells,\n                                            generate_sqs_by_enumeration,\n                                            generate_target_structure)\n from ase.io import write\n #makes a TiN cell\n primitive_structure = bulk('TiN', cubic=True, crystalstructure='rocksalt', a=4.2570)\n #makes a 3x3x3 supercell \n supercells = [primitive_structure.repeat(3)]\n # defines a cluster space. There are 8 brackets because we have 8 atoms in the cell defined earlier (Ti_4N_4). Several aloms in the same bracket mean that they are allowed on the same site\n cs = ClusterSpace(primitive_structure, [7.0,4.5],chemical_symbols=[['Ti'], ['N','H'],['Ti'], ['N','H'],['Ti'], ['N','H'],['Ti'], ['N','H']])\n # x in TiNx\n x = 0.75\n # In this case we want TiN_{0.75}H_{0.25}. We only act on sublattice A because we do not want to change the concentration of Ti. The target concentration has to be compatible with the supercell (i.e. it should correspond to an integer number of atoms in the cell)\n target_concentrations = {'A': {'N': x, 'H': 1-x}} \n #here we use “generate_sqs_from_supercells” because it allows us to make a supercell that has the same geometry as the one in the input\n # With more steps, we generate better structures, it also takes longer\n sqs=generate_sqs_from_supercells(cluster_space=cs,\n supercells=supercells,\n target_concentrations=target_concentrations,\n n_steps=50000 )\n write('TiNH.cif', sqs)"
+        },
+        {
+          "language": "bash",
+          "text": " module load Python/3.9.6-GCCcore-11.2.0 "
+        },
+        {
+          "language": "bash",
+          "text": " pip install sumo "
+        },
+        {
+          "language": "bash",
+          "text": " pmg potcar --symbols Li_sv O --functional PBE "
+        },
+        {
+          "language": "python",
+          "text": "from pymatgen.core import Structure\nfrom pymatgen.analysis.diffusion.neb.pathfinder import IDPPSolver\ninit_struct = Structure.from_file(\"POSCAR_start.vasp\")\nfinal_struct =Structure.from_file(\"POSCAR_end.vasp\")\nobj = IDPPSolver.from_endpoints(endpoints=[init_struct, final_struct], nimages=5,\n                               sort_tol=1.0)new_path = obj.run(maxiter=5000, \n                               tol=1e-5, gtol=1e-3, species=[\"Na\"])\nfor i in range(len(new_path)):\n   print(new_path[i])\n   new_path[i].to(fmt=\"poscar\",filename=\"POSCAR-\"+str(i)+\".vasp\")"
+        },
+        {
+          "language": "python",
+          "text": "from pymatgen.analysis.transition_state import NEBAnalysis\nneb = NEBAnalysis.from_dir(\"./\")\nnebplot = neb.get_plot()\nnebplot.savefig(\"NEB.png\")"
+        },
+        {
+          "language": "bash",
+          "text": " git clone https://github.com/pierrehirel/atomsk.git "
+        },
+        {
+          "language": "bash",
+          "text": " cd atomsk/src "
+        },
+        {
+          "language": "bash",
+          "text": " module load intel-compilers/2022.1.0 "
+        },
+        {
+          "language": "bash",
+          "text": " module load imkl/2022.1.0 "
+        },
+        {
+          "language": "bash",
+          "text": " make -f Makefile.ifort atomsk "
+        }
+      ],
+      "source_sha256": "a865ae1020a8388a623e0279151c4fc5febe4861de9a4beaecfef53d0626f654"
+    }
+  ],
+  "export": "mn.kjemi.vaspwiki-20250627110347.xml",
+  "recovery_date": "2026-11-18",
+  "files": [
+    {
+      "name": "getting-started.docx",
+      "size": 15733,
+      "sha256": "a9d8d25cbfcc9261571e2d56f32bc9e56f97085700031b3f557f00ed56792f56"
+    },
+    {
+      "name": "getting-started.pdf",
+      "size": 291902,
+      "sha256": "daab0b651be373d5fa57b343d9dbc7250b386eaa84a2c377c33d526f70fcd4ce"
+    },
+    {
+      "name": "Image.png",
+      "size": 54426,
+      "sha256": "3a9a4a8d5894a8411568821fdf45b8707e7a638dbf4babefba255ccaae59b37c"
+    },
+    {
+      "name": "index.docx",
+      "size": 11405,
+      "sha256": "db84bba94cf7132c0bc7fc57b418850b29cfde5f6c315090de083f94d41252e4"
+    },
+    {
+      "name": "index.pdf",
+      "size": 83219,
+      "sha256": "e6cd69b7a98593b8c006c5ff7cb51cae3ff8a4d460e017f602d3c2926e2bb145"
+    },
+    {
+      "name": "Logfile.xlsx",
+      "size": 13754,
+      "sha256": "7f5ac07134346d461338c659e81eec85370058ef0e4f4a90d929b52464443bbc"
+    },
+    {
+      "name": "methods.docx",
+      "size": 15179,
+      "sha256": "4656f1ff0ba64770025feaa486d92b62f272f3979daaebc674f243c868ba487b"
+    },
+    {
+      "name": "methods.pdf",
+      "size": 86556,
+      "sha256": "d9db144b069c4990305712635338f9ee69005cdf5f1a5151d48fc316d377ee58"
+    },
+    {
+      "name": "mn.kjemi.vaspwiki-20250627110347.xml",
+      "size": 41152,
+      "sha256": "3eedd2d991875c9d2fe5bbf676d8ceb21196b68d885602c3a9a3aa904cedc34b"
+    },
+    {
+      "name": "software-and-resources.docx",
+      "size": 19403,
+      "sha256": "7df1735e9436ae321d380b0e1ba7bdd6fbef6e06c327d8cf796f9d00a370172f"
+    },
+    {
+      "name": "software-and-resources.pdf",
+      "size": 125632,
+      "sha256": "d922b96c8943021d60000ed6a46402cea2afa548762046dccea57cf02597c52e"
+    }
+  ]
+}

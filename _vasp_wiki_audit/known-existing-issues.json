@@ -1,0 +1,19 @@
+{
+  "description": "Missing image targets already referenced by the shared head before the VASP Wiki migration. These are reported, not repaired in this scoped PR.",
+  "missing_shared_head_assets": [
+    "/images/android-chrome-192x192.png",
+    "/images/apple-touch-icon-114x114.png",
+    "/images/apple-touch-icon-120x120.png",
+    "/images/apple-touch-icon-144x144.png",
+    "/images/apple-touch-icon-152x152.png",
+    "/images/apple-touch-icon-180x180.png",
+    "/images/apple-touch-icon-57x57.png",
+    "/images/apple-touch-icon-60x60.png",
+    "/images/apple-touch-icon-72x72.png",
+    "/images/apple-touch-icon-76x76.png",
+    "/images/favicon-16x16.png",
+    "/images/favicon-32x32.png",
+    "/images/favicon-96x96.png",
+    "/images/favicon.ico"
+  ]
+}

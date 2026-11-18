@@ -1,0 +1,62 @@
+---
+layout: default
+---
+{% assign archive = site.data.vasp_wiki.articles | where: "id", page.wiki_id | first %}
+{% assign sections = archive.headings | default: page.wiki_toc %}
+<div class="research-home wiki-shell">
+  <a class="wiki-skip" href="#wiki-content">Skip to article</a>
+  <aside class="wiki-sidebar" aria-label="VASP Wiki navigation">
+    <a class="wiki-brand" href="{{ '/vasp-wiki/' | relative_url }}">VASP Wiki</a>
+    <p class="wiki-sidebar__intro">The UiO group archive</p>
+    <nav aria-label="Archive chapters">
+      <ul class="wiki-chapters">
+      {% for article in site.data.vasp_wiki.articles %}
+        <li><a href="{{ article.url | relative_url }}"{% if page.url == article.url %} aria-current="page"{% endif %}>{{ article.title | escape }}</a></li>
+      {% endfor %}
+        <li><a href="{{ '/vasp-wiki/sources-and-recovery/' | relative_url }}"{% if page.wiki_id == 'sources' %} aria-current="page"{% endif %}>Sources &amp; Recovery</a></li>
+        <li><a href="{{ '/vasp-wiki/contributing/' | relative_url }}"{% if page.wiki_id == 'contributing' %} aria-current="page"{% endif %}>Contributing &amp; Future Tutorials</a></li>
+      </ul>
+    </nav>
+    {% if sections.size > 0 %}
+    <details class="wiki-toc" open>
+      <summary>On this page</summary>
+      <nav aria-label="Article sections"><ul>
+        {% for section in sections %}
+        <li class="wiki-toc__level-{{ section.level }}"><a href="#{{ section.id }}">{{ section.title }}</a></li>
+        {% endfor %}
+      </ul></nav>
+    </details>
+    {% endif %}
+    <p class="wiki-sidebar__footer">Preserved from the UiO VASP Wiki.<br>New material will be identified separately.</p>
+  </aside>
+  <main id="wiki-content" class="wiki-article" tabindex="-1">
+    <header class="wiki-header">
+      <p class="wiki-eyebrow">Research knowledge archive</p>
+      <h1>{{ page.title | escape }}</h1>
+      {% if archive %}
+      <p class="wiki-provenance">Original page: <strong>{{ archive.original_title }}</strong> · Revision {{ archive.revision }} · {{ archive.updated | date: "%d %b %Y" }}</p>
+      <p class="wiki-provenance">Latest editor recorded in this export: <strong>{{ archive.editor | escape }}</strong>. Earlier contributors are not included in the backup.</p>
+      {% endif %}
+    </header>
+    <aside class="wiki-notice" aria-label="Archive status">
+      <strong>Archived / Historical Instructions</strong>
+      <p>This is a preserved group reference, not a validated guide to current HPC systems. Saga paths, project accounts, modules, software versions and commands are retained as recorded. Check current documentation and access requirements before use. Technical examples have not been run or scientifically revalidated.</p>
+      <a href="{{ '/vasp-wiki/sources-and-recovery/' | relative_url }}">Read the source and recovery notes</a>
+    </aside>
+    {% if page.wiki_id == 'computational-methods' %}
+    <aside class="wiki-editor-note"><strong>Recovery note</strong><p>Short placeholders and the original INCAR values are preserved, including the vibrational-frequency convergence example. These settings are not newly endorsed recommendations.</p></aside>
+    {% elsif page.wiki_id == 'software-and-resources' %}
+    <aside class="wiki-editor-note"><strong>Recovery note</strong><p>The IDPP example contains the original joined statement <code>sort_tol=1.0)new_path</code>. It is preserved for fidelity and is not executable as shown. The CatMAP screenshot is cropped in the supplied backup.</p></aside>
+    {% endif %}
+    <div class="wiki-content">{{ content }}</div>
+    {% if archive %}
+    <footer class="wiki-article-footer">
+      <a href="{{ '/files/vasp-wiki/wikitext/' | append: archive.id | append: '.wiki' | relative_url }}" download>Download original wikitext</a>
+      <a href="{{ '/vasp-wiki/sources-and-recovery/' | relative_url }}#original-files">Original documents &amp; attachments</a>
+      <a href="#wiki-content">Back to top &uarr;</a>
+    </footer>
+    {% endif %}
+    <p class="wiki-copy-status" role="status" aria-live="polite"></p>
+  </main>
+</div>
+<script src="{{ '/assets/js/vasp-wiki.js' | relative_url }}" defer></script>

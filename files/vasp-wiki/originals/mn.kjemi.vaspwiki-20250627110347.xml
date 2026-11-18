@@ -1,0 +1,997 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.10/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.10/ http://www.mediawiki.org/xml/export-0.10.xsd" version="0.10" xml:lang="en">
+  <siteinfo>
+    <sitename>mn.kjemi.vaspwiki</sitename>
+    <dbname>wiki_mn_kjemi_vaspwiki</dbname>
+    <base>https://wiki.uio.no/mn/kjemi/vaspwiki/index.php/Main_Page</base>
+    <generator>MediaWiki 1.27.4</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">mn.kjemi.vaspwiki</namespace>
+      <namespace key="5" case="first-letter">mn.kjemi.vaspwiki talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="274" case="first-letter">Widget</namespace>
+      <namespace key="275" case="first-letter">Widget talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Methods</title>
+    <ns>0</ns>
+    <id>4</id>
+    <revision>
+      <id>158</id>
+      <parentid>155</parentid>
+      <timestamp>2025-06-20T09:37:37Z</timestamp>
+      <contributor>
+        <username>Martitom@uio.no</username>
+        <id>13</id>
+      </contributor>
+      <comment>/* Nudged Elastic Band (NEB) */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="7754">=Methods=
+==VASP Wiki and Support Forum==
+The VASP manual contains information on all INCAR tags and tutorials and guides to several types of calculations ([https://www.vasp.at/wiki/ www.vasp.at/wiki/]).
+
+The VASP Support Forum ([https://www.vasp.at/forum/ www.vasp.at/forum/]) allows users to troubleshoot and discuss technical and scientific topics. The VASP developers are also active in answering questions.
+
+==Convergence and Efficiency==
+===Convergence tests===
+How to and relevant examples.
+
+===Benchmark===
+VASP efficiency on Saga (number of nodes/cores)
+
+Computational cost: atoms vs kpoints vs functional etc.
+
+==General calculations and relaxation==
+NELM, NSW
+
+==Systems==
+
+===Supercells===
+A supercell can be made in VESTA by going into Edit -&gt; Edit data -&gt; Unit Cell...
+
+When the window for the unit cell has opened press Transform, change the numbers in the Transformation matrix to make a supercell of your choice.
+
+===Surfaces and slabs===
+
+Slabs can be constructed using [[Software and resources#Atomic Simulation Environment (ASE)|ASE]].
+
+A specific surface can be exposed using VESTA, here is a [https://www.youtube.com/watch?v=5R-RpIul7eE&amp;list=PL-hN8vfRaU7jyuubOK0lChF-D9o7YtXHj&amp;index=23 youtube tutorial] for exposing the (110) surface of a TiO2 rutile structure, tutorials for other structures can be found on the same youtube channel.
+
+To make a supercell or a slab from the new unit cell you have just created VESTA you have to export the unit cell in a .vasp format. Open the vasp file in VESTA and then follow the same procedure for the creation of a supercell as has been explained above.
+
+Finite-size correction for slab supercell calculations of materials with spontaneous polarization &lt;ref&gt;Yoo, SH., Todorova, M., Wickramaratne, D. et al. Finite-size correction for slab supercell calculations of materials with spontaneous polarization. npj Comput Mater 7, 58 (2021) http://dx.doi.org/10.1038/s41524-021-00529-1 &lt;/ref&gt;
+
+===Grain boundaries and interfaces===
+Typically modeled as Coincident Site Lattice (CSL) structures that are optimized by rigid body translation.
+
+[[Software and resources#Materials project|Materials project]] provides a list of matching structures and terminations under the '''Substrates''' section for a selected structure.
+
+Special grain boundaries in perovskites &lt;ref&gt;B. M. Darinskiy, N. D. Efanova &amp; D. S. Saiko (2020) Special grain boundaries in perovskite crystals, Ferroelectrics, 567:1, 13-19, https://doi.org/10.1080/00150193.2020.1791582 &lt;/ref&gt;
+
+Machine learning sampling to determine rigid body translation &lt;ref&gt;Application of machine learning-based selective sampling to determine BaZrO3 grain boundary structures, Computational Materials Science, 164 (2019) 57-65. https://doi.org/10.1016/j.commatsci.2019.03.054 &lt;/ref&gt;
+
+===Disordered structures===
+Site occupancy disorder program: https://github.com/gcmt-group/sod
+
+Special quasirandom structures (SQS) generators: [[Software and resources#Supercell|Supercell]], [[Software and resources#TDEP|TDEP]], [[Software and resources#Icet|Icet]].
+
+==Defect calculations==
+
+===Charge correction===
+
+Self-Consistent Potential Correction for Charged Periodic Systems &lt;ref&gt;Mauricio Chagas da Silva, Michael Lorke, Bálint Aradi, Meisam Farzalipour Tabriz, Thomas Frauenheim, Angel Rubio, Dario Rocca, and Peter Deák
+Phys. Rev. Lett. 126, 076401. https://doi.org/10.1103/PhysRevLett.126.076401 &lt;/ref&gt;
+
+CoFFEE: Corrections For Formation Energy and Eigenvalues for charged defect simulations &lt;ref&gt;Naik, Mit H., and Manish Jain. CoFFEE: corrections for formation energy and eigenvalues for charged defect simulations. Computer Physics Communications 226 (2018) 114-126. https://doi-org/10.1016/j.cpc.2018.01.011 &lt;/ref&gt;
+
+Limitations of empirical supercell extrapolation for calculations of point defects in bulk, at surfaces, and in two-dimensional materials &lt;ref&gt;Christoph Freysoldt, Jörg Neugebauer, Anne Marie Z. Tan, and Richard G. Hennig, Limitations of empirical supercell extrapolation for calculations of point defects in bulk, at surfaces, and in two-dimensional materials, Phys. Rev. B 105, 01410 http://dx.doi.org/10.1103/PhysRevB.105.014103 &lt;/ref&gt;
+
+===Defect configurations===
+Evolutionary computing and machine learning for discovering of low-energy defect configurations &lt;ref&gt;Arrigoni, M., Madsen, G.K.H. Evolutionary computing and machine learning for discovering of low-energy defect configurations. npj Comput Mater 7, 71 (2021). https://doi.org/10.1038/s41524-021-00537-1&lt;/ref&gt;
+
+
+==Vibrational frequencies==
+Finite displacement method ([https://www.vasp.at/wiki/index.php/IBRION#IBRION.3D5_and_6:_second_derivatives.2C_Hessian_matrix_and_phonon_frequencies_.28finite_differences.29. IBRION=5]) can be used to find vibrational frequencies within the harmonic approximation.
+# See [https://www.vasp.at/wiki/index.php/Phonons_from_finite_differences Phonons from finite differences]
+# Relax the species that will be displaced to higher force convergance (e.g., EDIFFG=0.0001 or 0.005 eV Å^1)
+# Use IBRION=5, NFREE=4, POTIM=0.015. The NCORE-tag may need to be removed from INCAR
+# Check the energy profile (energy of each ionic step vs displacement) to make sure that the harmonic fit is satisfactory (2nd order polynomial)
+
+==Phonon calculations==
+
+[[Software and resources#Phonopy and Phono3py|Phonopy]] 
+
+==Nudged Elastic Band (NEB)==
+NEB calculations require relaxed CONTCAR files for the initial and final states, and POSCAR files for one or more states along the migration path, which are termed images. The POSCAR files can be generated by linear interpolation between neighboring states using '''nebmake.pl''' script which is part of [https://theory.cm.utexas.edu/vtsttools/scripts.html VTST Tools] and is available in the folder /cluster/projects/nn4604k/bin/vtstscripts-922).
+
+The following INCAR tags can be used to initiate a NEB calculations with one image and the climbing image method
+
+ IMAGES = 1
+ SPRING = -5
+ LCLIMB = .TRUE.
+
+POSCAR files for the initial, interpolated and final position must be placed in subfolders named 00, 01 and 02, and the job script must be modified accordingly. [https://theory.cm.utexas.edu/vtsttools/scripts.html VTST Tools] offers some improvements to the standard NEB implementation in VASP, and these can be loaded as a separate module with suffix &lt;code&gt; -vtst &lt;/code&gt;
+
+ module load VASP/5.4.4-intel-2019a-std-vtst
+ cp -r 00 01 02 $SCRATCH
+ savefile 01/CONTCAR 01/OUTCAR 01/DOSCAR 01/CHGCAR 01/WAVECAR
+
+If there are multiple images, the output can be saved with (in this example there are 5 images between 00 and 06, adjust to your neeeds)
+
+ for i in {01..05}; do
+     for file in CONTCAR OUTCAR DOSCAR CHGCAR WAVECAR; do
+         cleanup cp $i/$file $SLURM_SUBMIT_DIR/$i/$file
+     done
+ done
+
+==Polaron localization==
+Normally polarons which are localized at d or p orbitals normally require DFT+U hybrid functionals.
+
+The U value will determine the localization energy.
+
+To determine the proper U value for this calculations, the a piecewise linear method is strongly recommended.
+
+More detail can be found  ''Physical Review B'', ''90''(3), 035204.
+
+To visualize the polaron localization, you can generate the partial charge density, by set:
+
+LPARD = T
+
+IBAND = XX, the band where you localized polaron is.
+
+The PARCHG will be generated after calculation, and it can be visualized in the VESTA. 
+
+==Bader charge analysis==
+INCAR
+
+PREC = A
+
+LAECHG = T
+
+The core charge is written to AECCAR0 and the valance charge to AECCAR2. These two charge density files can be summed using the chgsum.pl script;
+   chgsum.pl AECCAR0 AECCAR2
+
+The bader analysis can then be done on this total charge density file:
+   bader CHGCAR -ref CHGCAR_sum
+
+==Error messages==
+
+==References==
+&lt;references /&gt;</text>
+      <sha1>9i1gp86zr81wrvb316kbr2zvcy76181</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Main Page</title>
+    <ns>0</ns>
+    <id>1</id>
+    <revision>
+      <id>100</id>
+      <parentid>99</parentid>
+      <timestamp>2022-03-09T13:20:23Z</timestamp>
+      <contributor>
+        <username>Jpolfus@uio.no</username>
+        <id>2</id>
+      </contributor>
+      <minor/>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="1404">Welcome to VASPwiki hosted by the [https://www.mn.uio.no/kjemi/english/research/groups/electrochemistry/ Electrochemistry group] within the Centre for Materials Science and Nanotechnology ([https://www.mn.uio.no/smn/english/ SMN]) at the University of Oslo, Norway.
+
+The wiki gathers beginner's guides and an overview of methods, software and resources for doing DFT calculations and data processing with specific details related to the high-performance computers within the Norwegian Research Infrastructure Services ([https://www.sigma2.no/nris NRIS]). Disclaimer: use at your own risk.
+
+Contact: [https://www.mn.uio.no/kjemi/english/people/aca/jpolfus/ Associate Prof. Jonathan Polfus]
+
+{{:Getting started}}
+{{:Methods}}
+{{:Software and resources}}
+
+= Getting started with MediaWiki =
+Consult the [//meta.wikimedia.org/wiki/Help:Contents User's Guide] for information on using the wiki software.
+* [//www.mediawiki.org/wiki/Special:MyLanguage/Manual:Configuration_settings Configuration settings list]
+* [//www.mediawiki.org/wiki/Special:MyLanguage/Manual:FAQ MediaWiki FAQ]
+* [https://lists.wikimedia.org/mailman/listinfo/mediawiki-announce MediaWiki release mailing list]
+* [//www.mediawiki.org/wiki/Special:MyLanguage/Localisation#Translation_resources Localise MediaWiki for your language]
+* [//www.mediawiki.org/wiki/Special:MyLanguage/Manual:Combating_spam Learn how to combat spam on your wiki]</text>
+      <sha1>dp8s2r2it7clbmazjijqsg5yqqiy9ns</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Getting started</title>
+    <ns>0</ns>
+    <id>2</id>
+    <revision>
+      <id>157</id>
+      <parentid>156</parentid>
+      <timestamp>2023-11-03T11:38:40Z</timestamp>
+      <contributor>
+        <username>Jpolfus@uio.no</username>
+        <id>2</id>
+      </contributor>
+      <minor/>
+      <comment>/* Job script */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="11543">=Getting started=
+==User access==
+Go to [https://www.metacenter.no www.metacenter.no] &gt; User Login (Passwords) &gt; 1. Request a user account &gt; HPC
+
+Fill in the form with your UiO username and choose the appropriate project. If you already have an account through for instance FYS-MENA41111, the project manager can in principle directly add you to the project without requesting a user account.
+
+The project manager can give you access to the VASP license through the [https://www.vasp.at/ VASP portal] and thereafter informing [mailto:sigma@uninett.no sigma2@uninett.no] to give your user the necessary group affiliations (vasp5).
+
+{| class=&quot;wikitable&quot;
+!Project
+!Manager
+!Group
+!Resources
+|-
+|NN4604K
+|Jonathan M. Polfus
+|Electrochemistry
+|Saga
+|-
+|NN9136K
+|Lasse Vines
+|LENS
+|Saga
+|-
+|NN9180K
+|Clas Persson
+|Structure Physics
+|Saga
+|}
+
+==Login==
+===ssh and scp===
+ssh can be used to login to the cluster with a terminal app on UNIX, macOS or Windows Subsystem for Linux
+
+&lt;code&gt; ssh [username]@saga.sigma2.no &lt;/code&gt;
+
+Hostnames and usernames can be saved by creating or editing the config file using for instance the vim text editor
+
+&lt;code&gt; vim ~/.ssh/config &lt;/code&gt;
+
+Press &lt;code&gt;i&lt;/code&gt; to insert text
+
+ Host saga
+    HostName = saga.sigma2.no
+    user [username]
+
+Press &lt;code&gt;escape&lt;/code&gt; to exit insert mode, and then &lt;code&gt;:wq&lt;/code&gt; to 'write' and 'quit'.
+
+Login is then simplified
+
+&lt;code&gt; ssh saga &lt;/code&gt;
+
+Copy files from cluster to current folder (&lt;code&gt;.&lt;/code&gt;)
+
+&lt;code&gt; scp saga:[path]/[filename] . &lt;/code&gt;
+
+Copy files to the home directory on the cluster
+
+&lt;code&gt; scp [filename] saga: &lt;/code&gt;
+
+===PuTTY and WinSCP===
+PuTTY is an ssh client for Windows that can be downloaded from [https://www.putty.org www.putty.org].
+
+WinSCP is an scp client for Windows that can be downloaded from [https://winscp.net/ winscp.net].
+
+==Working in UNIX==
+===Basic commands===
+Learn to use the TAB key to autocomplete commands, paths and filenames.
+
+Learn to view the manual for any command: &lt;code&gt; man [command] &lt;/code&gt; 
+
+{| class=&quot;wikitable&quot;
+|+Navigating the filesystem
+!Command
+!Description
+|-
+|&lt;code&gt; ls &lt;/code&gt;
+|List files and directories in current directory 
+|-
+|&lt;code&gt; mkdir [directoryname] &lt;/code&gt;
+|Make a directory
+|-
+|&lt;code&gt; cd [directoryname] &lt;/code&gt;
+|Change current path to another directory
+|-
+|&lt;code&gt; pwd &lt;/code&gt; 
+|Display current path
+|-
+|&lt;code&gt; cd .. &lt;/code&gt;
+|Change path to parent directory
+|-
+|&lt;code&gt;  cp [path]/[filename] . &lt;/code&gt;
+|Copy file to current directory
+|-
+|&lt;code&gt; cp [filename] [directoryname] &lt;/code&gt;
+|Copy file to another directory
+|-
+|&lt;code&gt; mv [filename] [path] &lt;/code&gt;
+|Move file to another directory
+|-
+|&lt;code&gt; mv [filename] [newfilename] &lt;/code&gt;
+|Change the name of a file
+|-
+|&lt;code&gt; cp -r  [directory] [path] &lt;/code&gt;
+|Copy directory and its contents to new location
+|-
+|&lt;code&gt; rm [filename] &lt;/code&gt;
+|Delete file
+|-
+|&lt;code&gt; rm -r [directoryname] &lt;/code&gt;
+|Delete directory and its contents
+|}
+
+{| class=&quot;wikitable&quot;
+|+Special paths and symbols
+!Symbol
+!Description
+|-
+|&lt;code&gt; . &lt;/code&gt;
+|Current directory
+|-
+|&lt;code&gt; .. &lt;/code&gt;
+|Parent directory
+|-
+|&lt;code&gt; ~ &lt;/code&gt;
+|Home directory
+|-
+|&lt;code&gt; / &lt;/code&gt;
+|Root directory
+|-
+|&lt;code&gt; * &lt;/code&gt;
+|Any text pattern
+|-
+|&lt;code&gt; ? &lt;/code&gt;
+|Any symbol
+|}
+
+{| class=&quot;wikitable&quot;
+|+Reading text files
+!Command
+!Description
+|-
+|&lt;code&gt; less &lt;/code&gt;
+|View text file. View live updates to end of file: &lt;code&gt; Shift-F &lt;/code&gt;
+|-
+|&lt;code&gt; head &lt;/code&gt;
+|Display top 10 lines of text file. Specify number of lines: &lt;code&gt; -n [count] &lt;/code&gt;
+|-
+|&lt;code&gt; tail &lt;/code&gt;
+|Display bottom 10 lines of text file. Specify number of lines: &lt;code&gt; -n [count] &lt;/code&gt;
+|-
+|&lt;code&gt; grep [pattern] &lt;/code&gt;
+|Display each line in text file containing text specific text/symbol pattern.
+|-
+|diff [file1] [file2]
+|Compare files line by line and display the difference between them.
+|-
+|&lt;code&gt; cat &lt;/code&gt;
+|Concatenate text files sequentially. Write the output to a file: &lt;code&gt; &gt; [filename] &lt;/code&gt;  
+|}
+
+===Filesystem on Saga===
+Home directory: mainly for personal files, scripts etc. due to limited storage space
+
+&lt;code&gt; /cluster/home/[username] &lt;/code&gt;
+
+Project folder: Run jobs and store output files in a subfolder called your username
+
+&lt;code&gt; /cluster/projects/[project number]/[username] &lt;/code&gt;
+
+Check disk usage and storage quota for home directory and project folder
+
+&lt;code&gt; dusage &lt;/code&gt;
+
+Check disk usage of current folder and subfolders
+
+&lt;code&gt; du -hs &lt;/code&gt;
+
+Find and remove files matching [filename] in current folder and subfolders
+
+&lt;code&gt; find . -name &quot;[filename]&quot; -exec rm {} \; &lt;/code&gt;
+
+===Logfile===
+Excel sheet for tracking jobs can be downloaded here: [[Media:Logfile.xlsx]]
+It also includes conversion between supercell size, number of atoms and k-point grid for a given k-point density.
+
+===Job script===
+Sigma2 NRIS HPC clusters use Slurm as workload manager and job scheduler. Documentation is available on [https://documentation.sigma2.no/ documentation.sigma2.no/]
+
+Computations are run by submitting a job script to the queue
+
+&lt;code&gt; sbatch jobfile &lt;/code&gt;
+
+View the queue for a user or project
+
+&lt;code&gt; squeue -u [username] &lt;/code&gt;
+&lt;code&gt; squeue -p [project number] &lt;/code&gt;
+
+Job scripts for Saga are available in the project folder
+ /cluster/projects/nn4604k/jobfile
+
+The job script below contains several SBATCH options
+
+Saga has 40 CPUs per node and it is recommended to use all CPUs on a node and a 1-2 nodes for optimal performance [https://documentation.sigma2.no/hpc_machines/saga.html documentation.sigma2.no/hpc_machines/saga]
+
+The module system is restored to avoid potential conflicts. There exist several compiled versions of VASP and specific versions are compiled for increased performance with gamma K-point grid
+ module restore system
+ module load VASPModules
+ module load VASP/6.4.1-intel-2022b-std-wannier90-libxc-hdf5-beef-0a928426e459cf2aeab3d0bf8f441c74
+ # module load VASP/6.4.1-intel-2022b-gam-wannier90-libxc-hdf5-beef-0a928426e459cf2aeab3d0bf8f441c74
+
+Available modules on the cluster can be listed with
+ module avail
+
+Files are copied to a temporary job folder ($SCRATCH). The WAVECAR file is copied if it is available.
+ cp [filenames] $SCRATCH
+ if [ -f WAVECAR ]
+ then
+ cp WAVECAR $SCRATCH
+ fi
+
+Output files are copied from the job folder to the submit folder when job completes. Savefile will also copy files if the job crashes.
+ savefile [filenames] 
+
+The job is started from the $SCRATCH folder and the elapsed time is recorded to slurm output
+ cd $SCRATCH
+ time srun vasp
+
+The progression of the job can be viewed in the slurm output file slurm-[slurm-id] in the submit folder once the job is running.
+
+The working folder can be accessed while the job is running
+&lt;code&gt; /cluster/work/jobs/[slurm-id] &lt;/code&gt;
+
+
+'''Example job script'''
+ #!/bin/bash
+ 
+ #SBATCH --job-name=jobname
+ #SBATCH --account=nn4604k
+ #SBATCH --time=10:00:00
+ #SBATCH --mem-per-cpu=4000M
+ #SBATCH --nodes=1
+ #SBATCH --ntasks-per-node=40
+ 
+ set -o errexit 
+ set -o nounset
+ 
+module restore system
+module load VASPModules
+module load VASP/6.4.1-intel-2022b-std-wannier90-libxc-hdf5-beef-0a928426e459cf2aeab3d0bf8f441c74
+# module load VASP/6.4.1-intel-2022b-gam-wannier90-libxc-hdf5-beef-0a928426e459cf2aeab3d0bf8f441c74
+ 
+ cp INCAR POSCAR POTCAR KPOINTS $SCRATCH
+ if [ -f WAVECAR ]
+ then
+ cp WAVECAR $SCRATCH
+ fi
+ 
+ savefile CONTCAR OUTCAR DOSCAR CHGCAR WAVECAR 
+ 
+ cd $SCRATCH
+ time srun vasp
+
+===Aliases and settings===
+Define useful shortcuts by adding aliases to &lt;code&gt; ~/.bash_profile &lt;/code&gt;
+
+ alias l='ls -l'
+ alias la='ls -l -a'
+ alias ..='cd ..'
+ alias nn='cd /cluster/projects/[project number]'
+ alias q='squeue -u [username]'
+
+You can also add commands such as automatically changing directory to the project folder upon login.
+
+Changes will take effect on next login or manually with &lt;code&gt; source ~/.bash_profile &lt;/code&gt;.
+
+
+vim can be configured in &lt;code&gt; ~/.vimrc &lt;/code&gt;. Turn on line numbers to easily jump to a specific line using &lt;code&gt; :[line number] &lt;/code&gt;
+ set number
+
+===Shell scripting===
+Shell scripting can be used to submit several jobs as exemplified below
+
+ #!/bin/bash
+ 
+ for i in $(seq 0.0 0.2 1.4); do
+    for j in $(seq 0.0 0.2 1.4); do
+       dir=&quot;$i-$j&quot;
+       echo $dir
+       mkdir $dir
+       cp INCAR POTCAR KPOINTS jobfile $dir
+       cp &quot;prefix_$dir.POSCAR.vasp&quot; $dir/POSCAR
+       cd $dir
+       sbatch jobfile
+       cd ..
+    done
+ done
+
+==First VASP calculation==
+{| class=&quot;wikitable&quot;
+|+ Five files required for a VASP simulation
+!File
+!Description
+|-
+|POSCAR
+|Structure file that specifies the unit cell vectors, types of atoms and their positions
+|-
+|POTCAR
+|Pseudopotentials for the atoms (same order as in POSCAR)
+|-
+|INCAR
+|Input parameters for the calculation including relaxation algorithms, functionals, convergence criteria, etc.
+|-
+|KPOINTS
+|k-point grid
+|-
+|jobfile
+|job script
+|}
+
+'''Cell volume relaxation of BaZrO&lt;sub&gt;3&lt;/sub&gt; unit cell'''
+
+Go to the project folder: &lt;code&gt; cd /cluster/projects/nn4604k &lt;/code&gt;
+
+Or if you have defined an [[#Aliases and settings|alias]]:&lt;code&gt; nn &lt;/code&gt; 
+
+Create a subfolder with your username (if you have not done so already)
+
+&lt;code&gt; mkdir [username] &lt;/code&gt;
+
+&lt;code&gt; cd [username] &lt;/code&gt;
+
+&lt;code&gt; mkdir test &lt;/code&gt;
+
+&lt;code&gt; cd test &lt;/code&gt;
+
+Copy all the files from the 'vasptest' folder (POSCAR, KPOINTS and INCAR) to your current folder (remember to use TAB to autocomplete the path)
+
+&lt;code&gt; cp ../../vasptest/* . &lt;/code&gt;
+
+Copy the necessary POTCAR files (press the UP arrow key to bring up your previous command)
+
+&lt;code&gt; cp ../../potpaw_PBE.54/Ba_sv/POTCAR POTCAR_Ba_sv &lt;/code&gt;
+
+&lt;code&gt; cp ../../potpaw_PBE.54/Zr_sv/POTCAR POTCAR_Zr_sv &lt;/code&gt;
+
+&lt;code&gt; cp ../../potpaw_PBE.54/O/POTCAR POTCAR_O &lt;/code&gt;
+
+Check the order of the atoms in POSCAR file
+
+&lt;code&gt; head POSCAR &lt;/code&gt;
+
+Concatenate the POTCAR files in the same order to a file named POTCAR
+
+&lt;code&gt; cat POTCAR_Ba_sv POTCAR_Zr_sv POTCAR_O &gt; POTCAR &lt;/code&gt;
+
+Check the order of the POTCAR
+
+&lt;code&gt; grep TITEL POTCAR &lt;/code&gt;
+
+Copy job script to current folder
+
+&lt;code&gt; cp ../../jobfile . &lt;/code&gt;
+
+Submit the job
+
+&lt;code&gt; sbatch jobfile &lt;/code&gt;
+
+Check the queue
+
+&lt;code&gt; squeue -u [username] &lt;/code&gt;
+
+Or if you have defined an [[#Aliases and settings|alias]]:&lt;code&gt; q &lt;/code&gt; 
+
+When the job starts you can follow the progress in the slurm log file
+
+&lt;code&gt; less slurm-[slurm-id] &lt;/code&gt;
+
+After three ionic relaxation steps, the required accuracy has been reached and the output files defined [[#Job script|job script]] are copied to the current folder.
+
+ 3 F= -.41724097E+02 E0= -.41724097E+02  d E =-.431449E-02
+ curvature:  -0.24 expect dE=-0.515E-06 dE for cont linesearch -0.515E-06
+ trial: gam= 0.00000 g(F)=  0.940E-64 g(S)=  0.213E-05 ort =-0.198E-03 (trialstep = 0.895E+00)
+ search vector abs. value=  0.213E-05
+ reached required accuracy - stopping structural energy minimisation
+ writing wavefunctions
+
+Check the lattice parameter in the POSCAR (input) and output (CONTCAR)
+
+&lt;code&gt; head POSCAR &lt;/code&gt;
+
+ BaZrO3                           
+   1.00000000000000     
+     4.2200000000000000    0.0000000000000000    0.0000000000000000
+     0.0000000000000000    4.2200000000000000    0.0000000000000000
+     0.0000000000000000    0.0000000000000000    4.2200000000000000
+ ...
+&lt;code&gt; head CONTCAR &lt;/code&gt;
+
+ BaZrO3                                  
+   1.00000000000000     
+     4.2353879522908331   -0.0000000000000000   -0.0000000000000000
+     0.0000000000000000    4.2353879522908331   -0.0000000000000000
+     0.0000000000000000   -0.0000000000000000    4.2353879522908331
+ ...
+The optimized cubic lattice parameter is 4.2354 Å.</text>
+      <sha1>11lyvisl20fxfegy07njny3fhrtp624</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Software and resources</title>
+    <ns>0</ns>
+    <id>3</id>
+    <revision>
+      <id>150</id>
+      <parentid>149</parentid>
+      <timestamp>2023-08-25T09:37:49Z</timestamp>
+      <contributor>
+        <username>Jpolfus@uio.no</username>
+        <id>2</id>
+      </contributor>
+      <minor/>
+      <comment>/* Supercell */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="15001">=Software and resources=
+
+Overview of codes from the Materials Design Group at Imperial College London
+
+[https://wmd-group.github.io/codes/ wmd-group.github.io/codes/]
+
+==Installation on Saga==
+
+ module load Python/3.9.6-GCCcore-11.2.0
+ pip install sumo
+ pip install --upgrade &lt;nowiki&gt;https://github.com/SUNCAT-Center/catmap/zipball/master&lt;/nowiki&gt;
+ 
+This will install the python packages under .local/lib/python3.9/site-packages/
+
+==Structure and crystallography==
+===ICSD database===
+[https://icsd.fiz-karlsruhe.de/ icsd.fiz-karlsruhe.de/]
+
+Automatic login through EZproxy ([https://www.ub.uio.no/english/using/remote-access.html www.ub.uio.no/english/using/remote-access.html]).
+
+===Materials project===
+[https://www.materialsproject.org www.materialsproject.org]
+
+Contains structures optimized by DFT that can be downloaded in several formats including .cif or POSCAR. Choose 'Conventional Standard' CIF.
+
+Login with a Google account (available with UiO username [https://www.uio.no/english/services/it/store-collaborate/gsuite/ www.uio.no/english/services/it/store-collaborate/gsuite/]).
+
+===International Tables for Crystallography===
+[https://it.iucr.org it.iucr.org]
+
+Complete overview of space-group symmetry and more.
+
+===Shannon Ionic Radii===
+[http://abulafia.mt.ic.ac.uk/shannon/ptable.php abulafia.mt.ic.ac.uk/shannon/]
+
+Reference &lt;ref&gt;R.D. Shannon, Revised Effective Ionic Radii and Systematic Studies of Interatomic Distances in Halides and Chalcogenides, Acta Cryst. 1976 (A32) 751-767 &lt;/ref&gt;
+
+===Binding energies of molecules===
+Todo: Table of binding energies with reference (e.g., NIST)
+
+==Catalysis==
+===Catalysis Hub===
+[https://www.catalysis-hub.org www.catalysis-hub.org]
+
+Database of reaction energies and barriers from DFT calculations.
+
+No entropy found
+
+==Visualization==
+===VESTA===
+[https://jp-minerals.org/vesta/en/ jp-minerals.org/vesta/en/] (Windows, macOS, Linux)
+
+View periodic structures, charge densities and more.
+
+Recommended settings for improved figures
+
+ Objects &gt; Properties &gt; Atoms/Bonds/Polyhedra
+ Specular: 40 40 40
+ Shininess (%): 1 
+ 
+ View &gt; Overall Appearance...
+ Ambient: 10
+ Diffuse: 70
+
+===Avogadro===
+[https://avogadro.cc avogadro.cc] (Windows, macOS, Linux)
+
+View and edit molecular structures and optimize molecular geometry through molecular mechanics.
+
+===Diamond===
+[https://www.crystalimpact.com/diamond/ www.crystalimpact.com/diamond/] (Windows: Licence)
+
+View and edit periodic and molecular structures.
+
+===VMD===
+[https://www.ks.uiuc.edu/Research/vmd/ www.ks.uiuc.edu/Research/vmd/] (Windows, macOS, Linux)
+
+View and animate structures from molecular dynamics simulations.
+
+===P4vasp===
+[https://github.com/orest-d/p4vasp github.com/orest-d/p4vasp] (macOS, Linux)
+
+Visualizing periodic structures, density of states and band structures.
+
+===OVITO===
+[https://www.ovito.org/about/| https://www.ovito.org/about/]
+
+OVITO is a visualization and analysis software for output data generated in molecular dynamics, atomistic Monte-Carlo and other particle-based simulations.
+
+===Escher===
+http://schooner.chem.dal.ca/wiki/Escher
+
+Escher is a collection of octave and python routines for the visualization and plotting of molecules and crystals. The original idea in escher was to modernize tessel, a program for the representation of crystal structures (and more). Via an interface to POV-Ray, tessel is able to generate very high quality representations of periodic and finite molecular structures.
+
+Code link of a [https://onlinelibrary.wiley.com/doi/abs/10.1002/ente.202070041 cover art example]: https://github.com/heesoopark/Escher-PovRay
+
+==Packages==
+===Spyder===
+[https://www.spyder-ide.org www.spyder-ide.org] (Windows, macOS, Linux)
+
+Scientific python developer environment. 
+
+===Atomic Simulation Environment (ASE)===
+[https://wiki.fysik.dtu.dk/ase/ wiki.fysik.dtu.dk/ase/]
+
+Set of tools and Python modules for setting up, manipulating, running, visualizing and analyzing atomistic simulations.
+
+ASE modules are available on Saga
+
+&lt;code&gt;module avail ase &lt;/code&gt;
+
+Example of a script for generating an (1 1 1) surface slab of palladium
+
+ #!/opt/local/bin/python
+ from ase.io import read
+ from ase.io import write
+ from ase.build import fcc111
+ from ase.build import fcc100
+ from ase.build import fcc111_root
+
+ slab = fcc111_root('Pd', 3, size=(1,2,7), a=3.9438731474981594, vacuum=5.0)
+
+ write('Pd-111.cif', slab, 'cif')
+
+===VASPKIT===
+[https://vaspkit.com/ vaspkit.com/]
+
+VASPKIT provides a powerful and user-friendly interface to perform high throughput analysis of various material properties from the raw calculated data using the widely-used VASP code.
+* Generate KPOINTS, POTCAR and INCAR for a given POSCAR file;
+* Elastic-constants of 2D and bulk materials using stress-strain or energy-strain methods;
+* Equation-of-state fitting;
+* Suggested k-paths for a given crystal structure;
+* Optical adsorption coefficient of 2D and bulk materials;
+* Band structure unfolding;
+* Fermi surface;
+* Density-of-states and band-structure;
+* Charge/spin density, Charge density difference;
+* Vacuum level and work function;
+* Wave-function analysis;
+* Molecular-dynamics analysis;
+* Effective mass of carrier;
+* Symmetry finding and operations;
+* 3D band structures;
+* Magnetocrystalline anisotropy energy;
+* Currently, only VASP raw data are fully supported.
+
+===CatMAP===
+CatMap is a catalyst Micro-kinetic Analysis Package for automated creation of micro-kinetic models used for studying kinetics and screening new catalysts.
+
+https://catmap.readthedocs.io/en/latest/index.html
+
+CatMap can be installed directly via pip:
+ &lt;code&gt;pip install --upgrade &lt;nowiki&gt;https://github.com/SUNCAT-Center/catmap/zipball/master&lt;/nowiki&gt;&lt;/code&gt;
+
+You may need to add the install directory to the PYTHONPATH, e.g. in bash shell or .bash_profile
+ &lt;code&gt;export PYTHONPATH=$HOME/THIS_FOLDER_PATH:$PYTHONPATH&lt;/code&gt;
+
+==== Input File Structure ====
+The TableParser accepts inputs in a tab-separated text file. An example of the header and first few lines are provided below:
+[[File:Image.png|thumb]]
+
+The following column titles are ''required for a functional input file'':
+* surface_name
+* site_name
+* species_name
+* formation_energy
+* frequencies
+* reference
+
+'''Generating input file for formation energy'''
+
+You can use the python script under /CATMAP/catmap/tutorials/1-generating_input_file/generate_input.py
+
+==== Creating a Microkinetic Model ====
+Check the example of CO oxidation in the path of /CATMAP/catmap/tutorials/2-creating_microkinetic_model
+
+One of the most important aspects of the “setup file” is the “rxn_expressions” variable which defines the elementary steps in the model. For this simplified CO oxidation model we will specify these as:
+ rxn_expressions = [               '*_s + CO_g -&gt; CO*',               '2*_s + O2_g &lt;-&gt; O-O* + *_s -&gt; 2O*',               'CO* +  O* &lt;-&gt; O-CO* + * -&gt; CO2_g + 2*',                   ] 
+The first expression includes CO adsorption without any activation barrier. The second includes an activated dissociative chemisorption of the oxygen molecule, and the final is an activated associative desorption of CO2. More complex models for CO oxidation could be imagined, but these elementary steps capture the key features. Note that we have only included “&lt;code&gt;*&lt;/code&gt;” and “&lt;code&gt;*_s&lt;/code&gt;” sites since this is a single-site model for CO oxidation. This means that all intermediates will be adsorbed at a site designated as “&lt;code&gt;s&lt;/code&gt;”. These reaction expressions will be parsed automatically in order to define the adsorbates, transition-states, gasses, and surface sites in the model.
+
+===Phonopy and Phono3py===
+[https://phonopy.github.io/phonopy/ phonopy.github.io/phonopy/]
+
+Phonopy is an open source package for phonon calculations at harmonic and quasi-harmonic levels. Phono3py is another open source package for phonon-phonon interaction and lattice thermal conductivity calculations. 
+
+Features
+* Phonon band structure, phonon DOS and partial-DOS
+* Phonon thermal properties: Free energy, heat capacity (Cv), and entropy
+* Phonon group velocity
+* Thermal ellipsoids / Mean square displacements
+* Irreducible representations of normal modes
+* Dynamic structure factor for INS and IXS
+* Non-analytical-term correction: LO-TO splitting (Born effective charges and dielectric constant are required.)
+* Mode Grüneisen parameters
+* Quasi-harmonic approximation: Thermal expansion, heat capacity at constant pressure (Cp)
+* Interfaces to calculators: VASP, VASP DFPT, ABINIT, Quantu ESPRESSO, SIESTA, Elk, WIEN2k, CRYSTAL, DFTB+, TURBOMOLE, CP2K, FHI-aims, CASTEP, Fleur, LAMMPS (external)
+* Phonopy API for Python
+
+===TDEP===
+[https://ollehellman.github.io ollehellman.github.io]
+
+Extract force constants, phonon dispersion relations, thermal conductivity, and generate special quasirandom structures (SQS)
+
+Available on Saga (/cluster/shared/tdep/bin). Use the following modules 
+
+ module purge
+ module load Anaconda3/2019.03
+ module load intel/2018b
+ module load imkl/2018.3.222-iimpi-2018b
+ module load HDF5/1.10.2-intel-2018b
+
+Generate SQS supercell from from a unit cell POSCAR file named 'infile.ucposcar'
+
+Example of 'infile.ucposcar' for a A-site doped SrTiO&lt;sub&gt;3&lt;/sub&gt; unit cell where the disordered site is designated 'ALLOY' (2 elements: 52% Sr and 48% Ca)
+  Sr1 Ti1 O3
+  1.0
+  3.945130 0.000000 0.000000
+  0.000000 3.945130 0.000000
+  0.000000 0.000000 3.945130
+  ALLOY Ti O
+  1 1 3
+  direct
+  0.000000 0.000000 0.000000 2 Sr 0.52 Ca 0.48
+  0.500000 0.500000 0.500000
+  0.500000 0.000000 0.500000
+  0.500000 0.500000 0.000000
+  0.000000 0.500000 0.500000
+ 
+Generate 2x2x2 SQS supercells (five supercells will be generated outfile.sqs_001-005)
+
+&lt;code&gt; generate_structure -d 2 2 2 &lt;/code&gt;
+
+===Supercell===
+[https://orex.github.io/supercell/ https://orex.github.io/supercell/]
+
+Supercell is a combinatorial structure-generation approach for the local-level modeling of atomic substitutions and partial occupancies in crystals.
+
+Supercell can generate special quasirandom structures (SQS).
+
+===Icet===
+Icet is a module in Python that can generate special quasirandom structures. [https://icet.materialsmodeling.org/]
+
+Here is an example of a script to generate an SQS structure of a 3x3x3 supercell of a rocksalt structure ( TiN ) with several H atoms on the N sites (TiN0.75H0.25)
+
+  from ase import Atom
+  from ase.build import bulk
+  from icet import ClusterSpace
+  from icet.tools.structure_generation import (generate_sqs,
+                                             generate_sqs_from_supercells,
+                                             generate_sqs_by_enumeration,
+                                             generate_target_structure)
+  from ase.io import write
+  #makes a TiN cell
+  primitive_structure = bulk('TiN', cubic=True, crystalstructure='rocksalt', a=4.2570)
+  #makes a 3x3x3 supercell 
+  supercells = [primitive_structure.repeat(3)]
+  # defines a cluster space. There are 8 brackets because we have 8 atoms in the cell defined earlier (Ti_4N_4). Several aloms in the same bracket mean that they are allowed on the same site
+  cs = ClusterSpace(primitive_structure, [7.0,4.5],chemical_symbols=[['Ti'], ['N','H'],['Ti'], ['N','H'],['Ti'], ['N','H'],['Ti'], ['N','H']])
+  # x in TiNx
+  x = 0.75
+  # In this case we want TiN_{0.75}H_{0.25}. We only act on sublattice A because we do not want to change the concentration of Ti. The target concentration has to be compatible with the supercell (i.e. it should correspond to an integer number of atoms in the cell)
+  target_concentrations = {'A': {'N': x, 'H': 1-x}} 
+  #here we use “generate_sqs_from_supercells” because it allows us to make a supercell that has the same geometry as the one in the input
+  # With more steps, we generate better structures, it also takes longer
+  sqs=generate_sqs_from_supercells(cluster_space=cs,
+  supercells=supercells,
+  target_concentrations=target_concentrations,
+  n_steps=50000 )
+  write('TiNH.cif', sqs)
+
+
+===Spinney===
+[https://spinney.readthedocs.io/ spinney.readthedocs.io/]
+
+Python package dedicated to the study of point defects in solids. Can be used to calculate the correction energy due to electrostatic finite-size-effects in charged supercells, defect formation energies and transition levels, and defects concentrations.
+
+===SUMO===
+[https://smtg-ucl.github.io/sumo/ smtg-ucl.github.io/sumo/]
+
+Sumo is a Python toolkit for plotting and analysis of ab initio solid-state calculation data, built on existing Python packages from the solid-state chemistry/physics community. SUMO can plot projected DOS directly from DOSCAR and vasprun.xml
+
+Installation on Saga works with the following python module (consider loading it in ~/.bash_profile)
+
+&lt;code&gt; module load Python/3.9.6-GCCcore-11.2.0 &lt;/code&gt;
+
+&lt;code&gt; pip install sumo &lt;/code&gt;
+
+The installation folder will be ~/.local/lib/python3.9/site-packages/
+
+===Pymatgen===
+[https://pymatgen.org/ pymatgen.org/]
+
+Pymatgen (Python Materials Genomics) is a robust, open-source Python library for materials analysis.
+
+Generate a POTCAR with symbols Li_sv O and the PBE functional in a termial
+
+&lt;code&gt; pmg potcar --symbols Li_sv O --functional PBE &lt;/code&gt;
+
+Python code quick examples:
+
+1) to generate [https://wiki.uio.no/mn/kjemi/vaspwiki/index.php/Main_Page#Nudged_Elastic_Band_.28NEB.29 NEB] images by using IDPP method (image dependent pair potential: J. Chem. Phys. 140, 214106 (2014))
+ from pymatgen.core import Structure
+ from pymatgen.analysis.diffusion.neb.pathfinder import IDPPSolver
+ init_struct = Structure.from_file(&quot;POSCAR_start.vasp&quot;)
+ final_struct =Structure.from_file(&quot;POSCAR_end.vasp&quot;)
+ obj = IDPPSolver.from_endpoints(endpoints=[init_struct, final_struct], nimages=5,
+                                sort_tol=1.0)new_path = obj.run(maxiter=5000, 
+                                tol=1e-5, gtol=1e-3, species=[&quot;Na&quot;])
+ for i in range(len(new_path)):
+    print(new_path[i])
+    new_path[i].to(fmt=&quot;poscar&quot;,filename=&quot;POSCAR-&quot;+str(i)+&quot;.vasp&quot;)
+
+2) to analyze NEB results
+ from pymatgen.analysis.transition_state import NEBAnalysis
+ neb = NEBAnalysis.from_dir(&quot;./&quot;)
+ nebplot = neb.get_plot()
+ nebplot.savefig(&quot;NEB.png&quot;)
+
+===Atomsk===
+[https://atomsk.univ-lille.fr/ atomsk.univ-lille.fr]
+
+Atomsk creates, manipulates, and converts data files for atomic-scale simulations in the field of computational materials sciences in CLI. Atomsk can generate common lattice types such as fcc, bcc, hcp, and perform elementary transformations: duplicate, rotate, deform, insert dislocations, merge several systems, create twins, bicrystals and polycrystals, and so on. These elementary tools can be combined to construct and shape a wide variety of atomic systems.
+
+To compile on Saga by using Intel fort/MLK,
+
+&lt;code&gt; git clone https://github.com/pierrehirel/atomsk.git &lt;/code&gt;
+
+&lt;code&gt; cd atomsk/src &lt;/code&gt;
+
+&lt;code&gt; module load intel-compilers/2022.1.0 &lt;/code&gt;
+
+&lt;code&gt; module load imkl/2022.1.0 &lt;/code&gt;
+
+&lt;code&gt; make -f Makefile.ifort atomsk &lt;/code&gt;
+
+==References==
+&lt;references /&gt;</text>
+      <sha1>9wkza5ysui36jnr4mmq77i3jrhoecdz</sha1>
+    </revision>
+  </page>
+</mediawiki>
