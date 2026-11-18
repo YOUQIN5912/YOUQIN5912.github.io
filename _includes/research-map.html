@@ -1,0 +1,30 @@
+<section class="research-map" aria-labelledby="research-map-title">
+  <header class="research-map__header">
+    <h2 id="research-map-title">Materials research workflow</h2>
+    <p>Explore how synthesis, structural measurements and modelling connect. Select a card to find the associated software and resources.</p>
+  </header>
+  <p class="research-map__scroll-hint">Swipe horizontally to explore the full map.</p>
+  <div class="research-map__viewport" tabindex="0" role="region" aria-label="Scrollable materials research map">
+    <div class="research-map__stage">
+      <canvas class="research-map__crystal" aria-hidden="true"></canvas>
+      {% include research-map-arrows.html %}
+      {% for node in site.data.research_map %}
+      <a class="research-map__node" data-node="{{ node.id }}" data-tone="{{ node.tone }}" style="--x:{{ node.box[0] }};--y:{{ node.box[1] }};--w:{{ node.box[2] }};--h:{{ node.box[3] }}" aria-label="{{ node.title | escape }}: {{ node.detail | escape }}" href="{{ '/software/' | relative_url }}#{{ node.target }}">
+        <span class="research-map__card">
+          <span class="research-map__visual{% if node.images.size > 1 %} research-map__visual--pair{% endif %}">
+            {% for image in node.images %}
+            <img src="{{ '/assets/images/research-map/' | append: image | append: '.webp' | relative_url }}" alt="" decoding="async">
+            {% endfor %}
+          </span>
+          <span class="research-map__label">
+            <strong>{{ node.title | escape }}</strong>
+            {% if node.caption and node.caption != "" %}<span>{{ node.caption | escape }}</span>{% endif %}
+          </span>
+          <span class="research-map__arrow" aria-hidden="true">↗</span>
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<script src="{{ '/assets/js/research-map.js' | relative_url }}" defer></script>

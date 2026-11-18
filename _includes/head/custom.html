@@ -40,3 +40,7 @@
 {% if page.layout == "vasp-wiki" %}
 <link rel="stylesheet" href="{{ '/assets/css/vasp-wiki.css' | relative_url }}">
 {% endif %}
+
+{% if page.url == "/research/" %}
+<link rel="stylesheet" href="{{ '/assets/css/research-map.css' | relative_url }}">
+{% endif %}

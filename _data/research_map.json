@@ -1,0 +1,202 @@
+[
+  {
+    "id": "materials",
+    "title": "Materials",
+    "detail": "Synthesis & crystal chemistry",
+    "tone": "teal",
+    "target": "pymatgen",
+    "images": [
+      "materials"
+    ],
+    "box": [
+      "11.875%",
+      "2.036%",
+      "20.982%",
+      "27.127%"
+    ]
+  },
+  {
+    "id": "dft",
+    "title": "DFT / AIMD",
+    "detail": "VASP",
+    "tone": "violet",
+    "target": "vasp",
+    "images": [
+      "dft"
+    ],
+    "box": [
+      "37.321%",
+      "7.709%",
+      "15.625%",
+      "21.455%"
+    ],
+    "caption": "VASP"
+  },
+  {
+    "id": "properties",
+    "title": "Properties",
+    "detail": "Structure–property analysis",
+    "tone": "amber",
+    "target": "python-and-matplotlib",
+    "images": [
+      "properties"
+    ],
+    "box": [
+      "60.848%",
+      "13.745%",
+      "15.670%",
+      "22.764%"
+    ]
+  },
+  {
+    "id": "ai",
+    "title": "AI/ML",
+    "detail": "Data-driven screening",
+    "tone": "amber",
+    "target": "materials-informatics",
+    "images": [
+      "ai"
+    ],
+    "box": [
+      "79.866%",
+      "16.218%",
+      "18.080%",
+      "25.455%"
+    ],
+    "caption": "Data-driven screening"
+  },
+  {
+    "id": "stem",
+    "title": "STEM / EDS",
+    "detail": "Imaging & elemental maps",
+    "tone": "teal",
+    "target": "microscopy",
+    "images": [
+      "stem"
+    ],
+    "box": [
+      "1.964%",
+      "56.582%",
+      "15.223%",
+      "19.709%"
+    ]
+  },
+  {
+    "id": "bragg",
+    "title": "Bragg",
+    "detail": "GSAS-II / TOPAS",
+    "tone": "teal",
+    "target": "diffraction",
+    "images": [
+      "bragg"
+    ],
+    "box": [
+      "16.652%",
+      "30.836%",
+      "15.134%",
+      "21.745%"
+    ],
+    "caption": "GSAS-II / TOPAS"
+  },
+  {
+    "id": "pdf",
+    "title": "PDF",
+    "detail": "Pair distribution function",
+    "tone": "teal",
+    "target": "pdfgetx3-and-pdfgetn3",
+    "images": [
+      "pdf"
+    ],
+    "box": [
+      "28.214%",
+      "53.527%",
+      "15.223%",
+      "18.545%"
+    ],
+    "caption": ""
+  },
+  {
+    "id": "small-box",
+    "title": "Small-box",
+    "detail": "PDFgui / TOPAS",
+    "tone": "violet",
+    "target": "pdfgui",
+    "images": [
+      "small-box",
+      "local-shell"
+    ],
+    "box": [
+      "42.768%",
+      "31.200%",
+      "15.714%",
+      "23.418%"
+    ],
+    "caption": "PDFgui / TOPAS"
+  },
+  {
+    "id": "xafs",
+    "title": "XAFS",
+    "detail": "XANES & EXAFS",
+    "tone": "teal",
+    "target": "xas",
+    "images": [
+      "xafs"
+    ],
+    "box": [
+      "20.625%",
+      "75.491%",
+      "15.313%",
+      "19.782%"
+    ]
+  },
+  {
+    "id": "discus",
+    "title": "DISCUS",
+    "detail": "Disorder & diffuse scattering",
+    "tone": "violet",
+    "target": "discus",
+    "images": [
+      "discus"
+    ],
+    "box": [
+      "45.580%",
+      "55.055%",
+      "14.509%",
+      "19.782%"
+    ]
+  },
+  {
+    "id": "rmc",
+    "title": "Big-box",
+    "detail": "RMCProfile",
+    "tone": "violet",
+    "target": "rmcprofile",
+    "images": [
+      "rmc-pairs",
+      "rmc-box"
+    ],
+    "box": [
+      "39.420%",
+      "75.491%",
+      "17.679%",
+      "22.109%"
+    ],
+    "caption": "RMCProfile"
+  },
+  {
+    "id": "solved",
+    "title": "Solved structure",
+    "detail": "Three-dimensional model",
+    "tone": "violet",
+    "target": "vesta",
+    "images": [
+      "solved"
+    ],
+    "box": [
+      "66.741%",
+      "44.582%",
+      "19.107%",
+      "35.564%"
+    ]
+  }
+]

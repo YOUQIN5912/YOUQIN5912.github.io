@@ -23,11 +23,21 @@
       links:
         - label: Documentation
           url: https://www.diffpy.org/diffpy.pdfgui/
+    - name: PDFgetX3 and PDFgetN3
+      description: Converting X-ray and neutron powder total scattering data, respectively, to pair distribution functions.
+      links:
+        - label: DiffPy documentation
+          url: https://www.diffpy.org/products/pdfgetx.html
     - name: RMCProfile
       description: Large-box reverse Monte Carlo modelling constrained by scattering data.
       links:
         - label: Project site
           url: https://rmcprofile.ornl.gov/
+    - name: DISCUS
+      description: Building models of disordered or defective crystals and simulating diffuse scattering and pair distribution functions.
+      links:
+        - label: DISCUS Suite
+          url: https://tproffen.github.io/DiffuseCode/
 
 - id: xas
   title: X-ray absorption spectroscopy
@@ -63,6 +73,20 @@
       links:
         - label: Project site
           url: https://www.quantum-espresso.org/
+    - name: pymatgen
+      description: Representing and transforming crystal structures, preparing calculation inputs and analysing materials data in Python.
+      links:
+        - label: Documentation
+          url: https://pymatgen.org/
+
+- id: microscopy
+  title: Electron microscopy and elemental maps
+  items:
+    - name: Fiji / ImageJ
+      description: Inspecting STEM images and exported elemental maps with line profiles and overlays.
+      links:
+        - label: Fiji documentation
+          url: https://imagej.net/software/fiji/
 
 - id: visualisation
   title: Data analysis and visualisation
@@ -79,3 +103,17 @@
       links:
         - label: Project site
           url: https://jp-minerals.org/vesta/en/
+
+- id: materials-informatics
+  title: AI/ML and materials screening
+  items:
+    - name: matminer
+      description: Turning compositions and crystal structures into numerical descriptors and accessing curated materials datasets.
+      links:
+        - label: Documentation
+          url: https://hackingmaterials.lbl.gov/matminer/
+    - name: scikit-learn
+      description: Building and evaluating regression and classification models for materials property prediction and screening.
+      links:
+        - label: Documentation
+          url: https://scikit-learn.org/stable/
