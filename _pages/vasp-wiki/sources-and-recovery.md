@@ -48,6 +48,7 @@ No VASP executable, licensed source code, pseudopotential dataset or POTCAR cont
 - The POSCAR/CONTCAR output excerpts already end with `...` in the source. No missing coordinates have been fabricated.
 - The CatMAP image is the only supplied image. Its rightmost columns and lower rows are outside the captured area. The original `energies.txt` data file is absent.
 - Several Methods sections were unfinished: convergence examples, benchmarks, general relaxation settings and error messages. The molecular binding-energy table is a source TODO. These remain visibly incomplete.
+- Incomplete sections are labelled **Content not recovered / Reserved for future additions**. They are intentionally left for the maintainer to complete; original short notes remain visible below the label.
 - The original Pymatgen IDPP example contains a joined statement and other examples may depend on old APIs. These issues are flagged without silently changing code.
 - Original external pages, old download targets, software documentation and bibliography records have not been exhaustively verified or updated. A restored hyperlink is not a technical endorsement.
 - There is no new Olivia, NRIS, DFT or AIMD tutorial in the backup. Planned material is listed separately from recovered instructions.

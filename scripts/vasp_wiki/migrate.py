@@ -18,6 +18,10 @@ ROUTES = {
 }
 XML = "mn.kjemi.vaspwiki-20250627110347.xml"
 NS = {"m": "http://www.mediawiki.org/xml/export-0.10/"}
+STUBS = {
+    "Methods": {"Convergence tests", "Benchmark", "General calculations and relaxation", "Error messages"},
+    "Software and resources": {"Binding energies of molecules"},
+}
 
 
 def slug(text):
@@ -128,6 +132,8 @@ class Article:
                 level = max(2, level)
                 self.headings.append({"id": slug(title), "title": unescape(re.sub(r"<[^>]+>", "", title)), "level": level})
                 out.append(f'<h{level} id="{slug(title)}">{self.inline(title)}<a class="wiki-anchor" href="#{slug(title)}" aria-label="Link to {escape(title, quote=True)}">#</a></h{level}>')
+                if title in STUBS.get(self.title, set()):
+                    out.append('<aside class="wiki-editor-note"><strong>Content not recovered / Reserved for future additions</strong><p>This section was empty or only an outline in the backup. Any original notes are preserved below. No additional tutorial content has been supplied.</p></aside>')
             elif line.startswith("{|"):
                 rows, cells, caption = [], [], ""
                 i += 1

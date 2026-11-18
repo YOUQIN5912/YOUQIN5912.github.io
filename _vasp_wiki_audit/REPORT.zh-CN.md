@@ -28,6 +28,8 @@
 4. CatMAP 原始 energies.txt、截图外的表格内容，以及任何未包含的图片和附件。
 5. 原来就未完成的 convergence、benchmark、relaxation、error messages 和分子结合能表格内容。
 
+按用户补充要求，五个不完整章节明确标注 “Content not recovered / Reserved for future additions”，保留原有简短笔记，其余留待用户补充，不生成推测的教程或参数。
+
 ## 授权与敏感信息
 
 用户确认其为原课题组成员并可以使用这些资料。保留来源、编辑者身份和第三方权利，不将组内使用权限扩张为任何新公共许可证。备份中未找到明确的再发布许可证；需要进一步分发时仍应核对适用条款。
