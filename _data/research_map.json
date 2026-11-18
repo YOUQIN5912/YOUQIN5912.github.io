@@ -8,10 +8,11 @@
     "images": [
       "materials"
     ],
-    "connects": [
-      "bragg",
-      "stem",
-      "dft"
+    "box": [
+      "11.875%",
+      "2.036%",
+      "20.982%",
+      "27.127%"
     ]
   },
   {
@@ -23,10 +24,13 @@
     "images": [
       "dft"
     ],
-    "connects": [
-      "properties",
-      "pdf"
-    ]
+    "box": [
+      "37.321%",
+      "7.709%",
+      "15.625%",
+      "21.455%"
+    ],
+    "caption": "VASP"
   },
   {
     "id": "properties",
@@ -37,9 +41,11 @@
     "images": [
       "properties"
     ],
-    "connects": [
-      "ai",
-      "solved"
+    "box": [
+      "60.848%",
+      "13.745%",
+      "15.670%",
+      "22.764%"
     ]
   },
   {
@@ -51,9 +57,13 @@
     "images": [
       "ai"
     ],
-    "connects": [
-      "solved"
-    ]
+    "box": [
+      "79.866%",
+      "16.218%",
+      "18.080%",
+      "25.455%"
+    ],
+    "caption": "Data-driven screening"
   },
   {
     "id": "stem",
@@ -64,42 +74,50 @@
     "images": [
       "stem"
     ],
-    "connects": [
-      "xafs",
-      "bragg"
+    "box": [
+      "1.964%",
+      "56.582%",
+      "15.223%",
+      "19.709%"
     ]
   },
   {
     "id": "bragg",
-    "title": "Bragg diffraction",
+    "title": "Bragg",
     "detail": "GSAS-II / TOPAS",
     "tone": "teal",
     "target": "diffraction",
     "images": [
       "bragg"
     ],
-    "connects": [
-      "pdf"
-    ]
+    "box": [
+      "16.652%",
+      "30.836%",
+      "15.134%",
+      "21.745%"
+    ],
+    "caption": "GSAS-II / TOPAS"
   },
   {
     "id": "pdf",
-    "title": "Total scattering",
+    "title": "PDF",
     "detail": "Pair distribution function",
     "tone": "teal",
     "target": "pdfgetx3-and-pdfgetn3",
     "images": [
       "pdf"
     ],
-    "connects": [
-      "small-box",
-      "discus",
-      "rmc"
-    ]
+    "box": [
+      "28.214%",
+      "53.527%",
+      "15.223%",
+      "18.545%"
+    ],
+    "caption": ""
   },
   {
     "id": "small-box",
-    "title": "Small-box refinement",
+    "title": "Small-box",
     "detail": "PDFgui / TOPAS",
     "tone": "violet",
     "target": "pdfgui",
@@ -107,9 +125,13 @@
       "small-box",
       "local-shell"
     ],
-    "connects": [
-      "solved"
-    ]
+    "box": [
+      "42.768%",
+      "31.200%",
+      "15.714%",
+      "23.418%"
+    ],
+    "caption": "PDFgui / TOPAS"
   },
   {
     "id": "xafs",
@@ -120,8 +142,11 @@
     "images": [
       "xafs"
     ],
-    "connects": [
-      "pdf"
+    "box": [
+      "20.625%",
+      "75.491%",
+      "15.313%",
+      "19.782%"
     ]
   },
   {
@@ -133,13 +158,16 @@
     "images": [
       "discus"
     ],
-    "connects": [
-      "solved"
+    "box": [
+      "45.580%",
+      "55.055%",
+      "14.509%",
+      "19.782%"
     ]
   },
   {
     "id": "rmc",
-    "title": "Big-box refinement",
+    "title": "Big-box",
     "detail": "RMCProfile",
     "tone": "violet",
     "target": "rmcprofile",
@@ -147,9 +175,13 @@
       "rmc-pairs",
       "rmc-box"
     ],
-    "connects": [
-      "solved"
-    ]
+    "box": [
+      "39.420%",
+      "75.491%",
+      "17.679%",
+      "22.109%"
+    ],
+    "caption": "RMCProfile"
   },
   {
     "id": "solved",
@@ -160,6 +192,11 @@
     "images": [
       "solved"
     ],
-    "connects": []
+    "box": [
+      "66.741%",
+      "44.582%",
+      "19.107%",
+      "35.564%"
+    ]
   }
 ]

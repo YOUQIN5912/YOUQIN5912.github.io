@@ -3,17 +3,13 @@
     <h2 id="research-map-title">Materials research workflow</h2>
     <p>Explore how synthesis, structural measurements and modelling connect. Select a card to find the associated software and resources.</p>
   </header>
-  <div class="research-map__stage">
-    <svg class="research-map__connections" aria-hidden="true" focusable="false">
-      <defs>
-        <marker id="research-map-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto">
-          <path d="M 0 0 L 8 4 L 0 8 L 2 4 Z" fill="#367f87"></path>
-        </marker>
-      </defs>
-    </svg>
-    <div class="research-map__grid">
+  <p class="research-map__scroll-hint">Swipe horizontally to explore the full map.</p>
+  <div class="research-map__viewport" tabindex="0" role="region" aria-label="Scrollable materials research map">
+    <div class="research-map__stage">
+      <canvas class="research-map__crystal" aria-hidden="true"></canvas>
+      {% include research-map-arrows.html %}
       {% for node in site.data.research_map %}
-      <a class="research-map__node" data-node="{{ node.id }}" data-tone="{{ node.tone }}" data-connects="{{ node.connects | join: ' ' }}" href="{{ '/software/' | relative_url }}#{{ node.target }}">
+      <a class="research-map__node" data-node="{{ node.id }}" data-tone="{{ node.tone }}" style="--x:{{ node.box[0] }};--y:{{ node.box[1] }};--w:{{ node.box[2] }};--h:{{ node.box[3] }}" aria-label="{{ node.title | escape }}: {{ node.detail | escape }}" href="{{ '/software/' | relative_url }}#{{ node.target }}">
         <span class="research-map__card">
           <span class="research-map__visual{% if node.images.size > 1 %} research-map__visual--pair{% endif %}">
             {% for image in node.images %}
@@ -22,7 +18,7 @@
           </span>
           <span class="research-map__label">
             <strong>{{ node.title | escape }}</strong>
-            <span>{{ node.detail | escape }}</span>
+            {% if node.caption and node.caption != "" %}<span>{{ node.caption | escape }}</span>{% endif %}
           </span>
           <span class="research-map__arrow" aria-hidden="true">↗</span>
         </span>
