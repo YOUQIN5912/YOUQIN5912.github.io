@@ -38,5 +38,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: vasp-wiki-preview
-          path: _site
+          path: |
+            _site/vasp-wiki
+            _site/files/vasp-wiki
+            _site/assets
           retention-days: 14

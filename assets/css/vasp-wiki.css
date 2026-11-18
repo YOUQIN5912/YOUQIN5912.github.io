@@ -39,7 +39,7 @@
 .wiki-copy { position: absolute; top: .4rem; right: .5rem; padding: .15rem .6rem; background: white; color: #176359; border: 1px solid #c8d8d2; border-radius: .25rem; font: inherit; font-size: .72rem; cursor: pointer; }
 .wiki-copy:focus-visible, .wiki-table:focus-visible { outline: 2px solid #176359; outline-offset: 3px; }
 .wiki-table { overflow-x: auto; margin: 1.2rem 0 1.7rem; border: 1px solid var(--home-line); border-radius: .35rem; }
-.wiki-table table { display: table; width: 100%; margin: 0; border-collapse: collapse; font-size: .84rem; }
+.wiki-table table { display: table; width: 100%; min-width: 36rem; margin: 0; border-collapse: collapse; font-size: .84rem; }
 .wiki-table caption { text-align: left; font-weight: 650; padding: .7rem .85rem; color: #17352f; }
 .wiki-table th, .wiki-table td { padding: .65rem .85rem; vertical-align: top; border-bottom: 1px solid var(--home-line); }
 .wiki-table th { background: #edf4f0; color: #17352f; }
@@ -70,4 +70,5 @@
   .wiki-shell { display: block; max-width: none; }
   .wiki-sidebar, .wiki-copy, .wiki-skip, .wiki-anchor, .wiki-copy-status { display: none; }
   .wiki-content .highlight pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; }
+  .wiki-table table { min-width: 0; }
 }
