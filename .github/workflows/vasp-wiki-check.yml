@@ -12,6 +12,7 @@ on:
       - 'assets/js/vasp-wiki.js'
       - 'files/vasp-wiki/**'
       - 'scripts/vasp_wiki/**'
+      - '_vasp_wiki_audit/**'
       - '.github/workflows/vasp-wiki-check.yml'
 
 permissions:
@@ -33,6 +34,7 @@ jobs:
       - name: Check rendered links, code blocks and downloads
         run: python3 scripts/vasp_wiki/check.py --site _site
       - name: Save review preview without deployment
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: vasp-wiki-preview
