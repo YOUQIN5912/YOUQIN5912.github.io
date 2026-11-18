@@ -1,0 +1,170 @@
+---
+layout: vasp-wiki
+title: "Computational Methods"
+permalink: /vasp-wiki/computational-methods/
+wiki_id: computational-methods
+author_profile: false
+---
+
+<h2 id="vasp-wiki-and-support-forum">VASP Wiki and Support Forum<a class="wiki-anchor" href="#vasp-wiki-and-support-forum" aria-label="Link to VASP Wiki and Support Forum">#</a></h2>
+
+<p>The VASP manual contains information on all INCAR tags and tutorials and guides to several types of calculations (<a href="https://www.vasp.at/wiki/">www.vasp.at/wiki/</a>).</p>
+
+<p>The VASP Support Forum (<a href="https://www.vasp.at/forum/">www.vasp.at/forum/</a>) allows users to troubleshoot and discuss technical and scientific topics. The VASP developers are also active in answering questions.</p>
+
+<h2 id="convergence-and-efficiency">Convergence and Efficiency<a class="wiki-anchor" href="#convergence-and-efficiency" aria-label="Link to Convergence and Efficiency">#</a></h2>
+
+<h3 id="convergence-tests">Convergence tests<a class="wiki-anchor" href="#convergence-tests" aria-label="Link to Convergence tests">#</a></h3>
+
+<p>How to and relevant examples.</p>
+
+<h3 id="benchmark">Benchmark<a class="wiki-anchor" href="#benchmark" aria-label="Link to Benchmark">#</a></h3>
+
+<p>VASP efficiency on Saga (number of nodes/cores)</p>
+
+<p>Computational cost: atoms vs kpoints vs functional etc.</p>
+
+<h2 id="general-calculations-and-relaxation">General calculations and relaxation<a class="wiki-anchor" href="#general-calculations-and-relaxation" aria-label="Link to General calculations and relaxation">#</a></h2>
+
+<p>NELM, NSW</p>
+
+<h2 id="systems">Systems<a class="wiki-anchor" href="#systems" aria-label="Link to Systems">#</a></h2>
+
+<h3 id="supercells">Supercells<a class="wiki-anchor" href="#supercells" aria-label="Link to Supercells">#</a></h3>
+
+<p>A supercell can be made in VESTA by going into Edit -&gt; Edit data -&gt; Unit Cell...</p>
+
+<p>When the window for the unit cell has opened press Transform, change the numbers in the Transformation matrix to make a supercell of your choice.</p>
+
+<h3 id="surfaces-and-slabs">Surfaces and slabs<a class="wiki-anchor" href="#surfaces-and-slabs" aria-label="Link to Surfaces and slabs">#</a></h3>
+
+<p>Slabs can be constructed using <a href="/vasp-wiki/software-and-resources/#atomic-simulation-environment-ase">ASE</a>.</p>
+
+<p>A specific surface can be exposed using VESTA, here is a <a href="https://www.youtube.com/watch?v=5R-RpIul7eE&amp;list=PL-hN8vfRaU7jyuubOK0lChF-D9o7YtXHj&amp;index=23">youtube tutorial</a> for exposing the (110) surface of a TiO2 rutile structure, tutorials for other structures can be found on the same youtube channel.</p>
+
+<p>To make a supercell or a slab from the new unit cell you have just created VESTA you have to export the unit cell in a .vasp format. Open the vasp file in VESTA and then follow the same procedure for the creation of a supercell as has been explained above.</p>
+
+<p>Finite-size correction for slab supercell calculations of materials with spontaneous polarization <sup id="cite-1"><a href="#reference-1" aria-label="Reference 1">[1]</a></sup></p>
+
+<h3 id="grain-boundaries-and-interfaces">Grain boundaries and interfaces<a class="wiki-anchor" href="#grain-boundaries-and-interfaces" aria-label="Link to Grain boundaries and interfaces">#</a></h3>
+
+<p>Typically modeled as Coincident Site Lattice (CSL) structures that are optimized by rigid body translation.</p>
+
+<p><a href="/vasp-wiki/software-and-resources/#materials-project">Materials project</a> provides a list of matching structures and terminations under the <strong>Substrates</strong> section for a selected structure.</p>
+
+<p>Special grain boundaries in perovskites <sup id="cite-2"><a href="#reference-2" aria-label="Reference 2">[2]</a></sup></p>
+
+<p>Machine learning sampling to determine rigid body translation <sup id="cite-3"><a href="#reference-3" aria-label="Reference 3">[3]</a></sup></p>
+
+<h3 id="disordered-structures">Disordered structures<a class="wiki-anchor" href="#disordered-structures" aria-label="Link to Disordered structures">#</a></h3>
+
+<p>Site occupancy disorder program: <a href="https://github.com/gcmt-group/sod">https://github.com/gcmt-group/sod</a></p>
+
+<p>Special quasirandom structures (SQS) generators: <a href="/vasp-wiki/software-and-resources/#supercell">Supercell</a>, <a href="/vasp-wiki/software-and-resources/#tdep">TDEP</a>, <a href="/vasp-wiki/software-and-resources/#icet">Icet</a>.</p>
+
+<h2 id="defect-calculations">Defect calculations<a class="wiki-anchor" href="#defect-calculations" aria-label="Link to Defect calculations">#</a></h2>
+
+<h3 id="charge-correction">Charge correction<a class="wiki-anchor" href="#charge-correction" aria-label="Link to Charge correction">#</a></h3>
+
+<p>Self-Consistent Potential Correction for Charged Periodic Systems <sup id="cite-4"><a href="#reference-4" aria-label="Reference 4">[4]</a></sup></p>
+
+<p>CoFFEE: Corrections For Formation Energy and Eigenvalues for charged defect simulations <sup id="cite-5"><a href="#reference-5" aria-label="Reference 5">[5]</a></sup></p>
+
+<p>Limitations of empirical supercell extrapolation for calculations of point defects in bulk, at surfaces, and in two-dimensional materials <sup id="cite-6"><a href="#reference-6" aria-label="Reference 6">[6]</a></sup></p>
+
+<h3 id="defect-configurations">Defect configurations<a class="wiki-anchor" href="#defect-configurations" aria-label="Link to Defect configurations">#</a></h3>
+
+<p>Evolutionary computing and machine learning for discovering of low-energy defect configurations <sup id="cite-7"><a href="#reference-7" aria-label="Reference 7">[7]</a></sup></p>
+
+<h2 id="vibrational-frequencies">Vibrational frequencies<a class="wiki-anchor" href="#vibrational-frequencies" aria-label="Link to Vibrational frequencies">#</a></h2>
+
+<p>Finite displacement method (<a href="https://www.vasp.at/wiki/index.php/IBRION#IBRION.3D5_and_6:_second_derivatives.2C_Hessian_matrix_and_phonon_frequencies_.28finite_differences.29.">IBRION=5</a>) can be used to find vibrational frequencies within the harmonic approximation.</p>
+
+<ol><li>See <a href="https://www.vasp.at/wiki/index.php/Phonons_from_finite_differences">Phonons from finite differences</a></li><li>Relax the species that will be displaced to higher force convergance (e.g., EDIFFG=0.0001 or 0.005 eV Å^1)</li><li>Use IBRION=5, NFREE=4, POTIM=0.015. The NCORE-tag may need to be removed from INCAR</li><li>Check the energy profile (energy of each ionic step vs displacement) to make sure that the harmonic fit is satisfactory (2nd order polynomial)</li></ol>
+
+<h2 id="phonon-calculations">Phonon calculations<a class="wiki-anchor" href="#phonon-calculations" aria-label="Link to Phonon calculations">#</a></h2>
+
+<p><a href="/vasp-wiki/software-and-resources/#phonopy-and-phono3py">Phonopy</a> </p>
+
+<h2 id="nudged-elastic-band-neb">Nudged Elastic Band (NEB)<a class="wiki-anchor" href="#nudged-elastic-band-neb" aria-label="Link to Nudged Elastic Band (NEB)">#</a></h2>
+
+<p>NEB calculations require relaxed CONTCAR files for the initial and final states, and POSCAR files for one or more states along the migration path, which are termed images. The POSCAR files can be generated by linear interpolation between neighboring states using <strong>nebmake.pl</strong> script which is part of <a href="https://theory.cm.utexas.edu/vtsttools/scripts.html">VTST Tools</a> and is available in the folder /cluster/projects/nn4604k/bin/vtstscripts-922).</p>
+
+<p>The following INCAR tags can be used to initiate a NEB calculations with one image and the climbing image method</p>
+
+{% highlight ini %}
+IMAGES = 1
+SPRING = -5
+LCLIMB = .TRUE.
+{% endhighlight %}
+
+<p>POSCAR files for the initial, interpolated and final position must be placed in subfolders named 00, 01 and 02, and the job script must be modified accordingly. <a href="https://theory.cm.utexas.edu/vtsttools/scripts.html">VTST Tools</a> offers some improvements to the standard NEB implementation in VASP, and these can be loaded as a separate module with suffix <code> -vtst </code></p>
+
+{% highlight bash %}
+module load VASP/5.4.4-intel-2019a-std-vtst
+cp -r 00 01 02 $SCRATCH
+savefile 01/CONTCAR 01/OUTCAR 01/DOSCAR 01/CHGCAR 01/WAVECAR
+{% endhighlight %}
+
+<p>If there are multiple images, the output can be saved with (in this example there are 5 images between 00 and 06, adjust to your neeeds)</p>
+
+{% highlight bash %}
+for i in {01..05}; do
+    for file in CONTCAR OUTCAR DOSCAR CHGCAR WAVECAR; do
+        cleanup cp $i/$file $SLURM_SUBMIT_DIR/$i/$file
+    done
+done
+{% endhighlight %}
+
+<h2 id="polaron-localization">Polaron localization<a class="wiki-anchor" href="#polaron-localization" aria-label="Link to Polaron localization">#</a></h2>
+
+<p>Normally polarons which are localized at d or p orbitals normally require DFT+U hybrid functionals.</p>
+
+<p>The U value will determine the localization energy.</p>
+
+<p>To determine the proper U value for this calculations, the a piecewise linear method is strongly recommended.</p>
+
+<p>More detail can be found  <em>Physical Review B</em>, <em>90</em>(3), 035204.</p>
+
+<p>To visualize the polaron localization, you can generate the partial charge density, by set:</p>
+
+{% highlight ini %}
+LPARD = T
+{% endhighlight %}
+
+{% highlight ini %}
+IBAND = XX, the band where you localized polaron is.
+{% endhighlight %}
+
+<p>The PARCHG will be generated after calculation, and it can be visualized in the VESTA. </p>
+
+<h2 id="bader-charge-analysis">Bader charge analysis<a class="wiki-anchor" href="#bader-charge-analysis" aria-label="Link to Bader charge analysis">#</a></h2>
+
+<p>INCAR</p>
+
+{% highlight ini %}
+PREC = A
+{% endhighlight %}
+
+{% highlight ini %}
+LAECHG = T
+{% endhighlight %}
+
+<p>The core charge is written to AECCAR0 and the valance charge to AECCAR2. These two charge density files can be summed using the chgsum.pl script;</p>
+
+{% highlight bash %}
+  chgsum.pl AECCAR0 AECCAR2
+{% endhighlight %}
+
+<p>The bader analysis can then be done on this total charge density file:</p>
+
+{% highlight bash %}
+  bader CHGCAR -ref CHGCAR_sum
+{% endhighlight %}
+
+<h2 id="error-messages">Error messages<a class="wiki-anchor" href="#error-messages" aria-label="Link to Error messages">#</a></h2>
+
+<h2 id="references">References<a class="wiki-anchor" href="#references" aria-label="Link to References">#</a></h2>
+
+<ol class="wiki-references"><li id="reference-1">Yoo, SH., Todorova, M., Wickramaratne, D. et al. Finite-size correction for slab supercell calculations of materials with spontaneous polarization. npj Comput Mater 7, 58 (2021) <a href="http://dx.doi.org/10.1038/s41524-021-00529-1">http://dx.doi.org/10.1038/s41524-021-00529-1</a>  <a href="#cite-1" aria-label="Back to citation 1">&uarr;</a></li><li id="reference-2">B. M. Darinskiy, N. D. Efanova &amp; D. S. Saiko (2020) Special grain boundaries in perovskite crystals, Ferroelectrics, 567:1, 13-19, <a href="https://doi.org/10.1080/00150193.2020.1791582">https://doi.org/10.1080/00150193.2020.1791582</a>  <a href="#cite-2" aria-label="Back to citation 2">&uarr;</a></li><li id="reference-3">Application of machine learning-based selective sampling to determine BaZrO3 grain boundary structures, Computational Materials Science, 164 (2019) 57-65. <a href="https://doi.org/10.1016/j.commatsci.2019.03.054">https://doi.org/10.1016/j.commatsci.2019.03.054</a>  <a href="#cite-3" aria-label="Back to citation 3">&uarr;</a></li><li id="reference-4">Mauricio Chagas da Silva, Michael Lorke, Bálint Aradi, Meisam Farzalipour Tabriz, Thomas Frauenheim, Angel Rubio, Dario Rocca, and Peter Deák
+Phys. Rev. Lett. 126, 076401. <a href="https://doi.org/10.1103/PhysRevLett.126.076401">https://doi.org/10.1103/PhysRevLett.126.076401</a>  <a href="#cite-4" aria-label="Back to citation 4">&uarr;</a></li><li id="reference-5">Naik, Mit H., and Manish Jain. CoFFEE: corrections for formation energy and eigenvalues for charged defect simulations. Computer Physics Communications 226 (2018) 114-126. <a href="https://doi.org/10.1016/j.cpc.2018.01.011">https://doi-org/10.1016/j.cpc.2018.01.011</a>  <a href="#cite-5" aria-label="Back to citation 5">&uarr;</a></li><li id="reference-6">Christoph Freysoldt, Jörg Neugebauer, Anne Marie Z. Tan, and Richard G. Hennig, Limitations of empirical supercell extrapolation for calculations of point defects in bulk, at surfaces, and in two-dimensional materials, Phys. Rev. B 105, 01410 <a href="http://dx.doi.org/10.1103/PhysRevB.105.014103">http://dx.doi.org/10.1103/PhysRevB.105.014103</a>  <a href="#cite-6" aria-label="Back to citation 6">&uarr;</a></li><li id="reference-7">Arrigoni, M., Madsen, G.K.H. Evolutionary computing and machine learning for discovering of low-energy defect configurations. npj Comput Mater 7, 71 (2021). <a href="https://doi.org/10.1038/s41524-021-00537-1">https://doi.org/10.1038/s41524-021-00537-1</a> <a href="#cite-7" aria-label="Back to citation 7">&uarr;</a></li></ol>

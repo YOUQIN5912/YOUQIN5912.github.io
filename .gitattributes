@@ -1,0 +1,5 @@
+# Preserve original export bytes, including XML line endings.
+files/vasp-wiki/originals/* -text
+# Historical source whitespace is deliberately retained.
+files/vasp-wiki/** -whitespace
+_pages/vasp-wiki/*.html -whitespace

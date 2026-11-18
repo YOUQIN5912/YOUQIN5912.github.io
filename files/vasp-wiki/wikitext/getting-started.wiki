@@ -1,0 +1,406 @@
+=Getting started=
+==User access==
+Go to [https://www.metacenter.no www.metacenter.no] > User Login (Passwords) > 1. Request a user account > HPC
+
+Fill in the form with your UiO username and choose the appropriate project. If you already have an account through for instance FYS-MENA41111, the project manager can in principle directly add you to the project without requesting a user account.
+
+The project manager can give you access to the VASP license through the [https://www.vasp.at/ VASP portal] and thereafter informing [mailto:sigma@uninett.no sigma2@uninett.no] to give your user the necessary group affiliations (vasp5).
+
+{| class="wikitable"
+!Project
+!Manager
+!Group
+!Resources
+|-
+|NN4604K
+|Jonathan M. Polfus
+|Electrochemistry
+|Saga
+|-
+|NN9136K
+|Lasse Vines
+|LENS
+|Saga
+|-
+|NN9180K
+|Clas Persson
+|Structure Physics
+|Saga
+|}
+
+==Login==
+===ssh and scp===
+ssh can be used to login to the cluster with a terminal app on UNIX, macOS or Windows Subsystem for Linux
+
+<code> ssh [username]@saga.sigma2.no </code>
+
+Hostnames and usernames can be saved by creating or editing the config file using for instance the vim text editor
+
+<code> vim ~/.ssh/config </code>
+
+Press <code>i</code> to insert text
+
+ Host saga
+    HostName = saga.sigma2.no
+    user [username]
+
+Press <code>escape</code> to exit insert mode, and then <code>:wq</code> to 'write' and 'quit'.
+
+Login is then simplified
+
+<code> ssh saga </code>
+
+Copy files from cluster to current folder (<code>.</code>)
+
+<code> scp saga:[path]/[filename] . </code>
+
+Copy files to the home directory on the cluster
+
+<code> scp [filename] saga: </code>
+
+===PuTTY and WinSCP===
+PuTTY is an ssh client for Windows that can be downloaded from [https://www.putty.org www.putty.org].
+
+WinSCP is an scp client for Windows that can be downloaded from [https://winscp.net/ winscp.net].
+
+==Working in UNIX==
+===Basic commands===
+Learn to use the TAB key to autocomplete commands, paths and filenames.
+
+Learn to view the manual for any command: <code> man [command] </code> 
+
+{| class="wikitable"
+|+Navigating the filesystem
+!Command
+!Description
+|-
+|<code> ls </code>
+|List files and directories in current directory 
+|-
+|<code> mkdir [directoryname] </code>
+|Make a directory
+|-
+|<code> cd [directoryname] </code>
+|Change current path to another directory
+|-
+|<code> pwd </code> 
+|Display current path
+|-
+|<code> cd .. </code>
+|Change path to parent directory
+|-
+|<code>  cp [path]/[filename] . </code>
+|Copy file to current directory
+|-
+|<code> cp [filename] [directoryname] </code>
+|Copy file to another directory
+|-
+|<code> mv [filename] [path] </code>
+|Move file to another directory
+|-
+|<code> mv [filename] [newfilename] </code>
+|Change the name of a file
+|-
+|<code> cp -r  [directory] [path] </code>
+|Copy directory and its contents to new location
+|-
+|<code> rm [filename] </code>
+|Delete file
+|-
+|<code> rm -r [directoryname] </code>
+|Delete directory and its contents
+|}
+
+{| class="wikitable"
+|+Special paths and symbols
+!Symbol
+!Description
+|-
+|<code> . </code>
+|Current directory
+|-
+|<code> .. </code>
+|Parent directory
+|-
+|<code> ~ </code>
+|Home directory
+|-
+|<code> / </code>
+|Root directory
+|-
+|<code> * </code>
+|Any text pattern
+|-
+|<code> ? </code>
+|Any symbol
+|}
+
+{| class="wikitable"
+|+Reading text files
+!Command
+!Description
+|-
+|<code> less </code>
+|View text file. View live updates to end of file: <code> Shift-F </code>
+|-
+|<code> head </code>
+|Display top 10 lines of text file. Specify number of lines: <code> -n [count] </code>
+|-
+|<code> tail </code>
+|Display bottom 10 lines of text file. Specify number of lines: <code> -n [count] </code>
+|-
+|<code> grep [pattern] </code>
+|Display each line in text file containing text specific text/symbol pattern.
+|-
+|diff [file1] [file2]
+|Compare files line by line and display the difference between them.
+|-
+|<code> cat </code>
+|Concatenate text files sequentially. Write the output to a file: <code> > [filename] </code>  
+|}
+
+===Filesystem on Saga===
+Home directory: mainly for personal files, scripts etc. due to limited storage space
+
+<code> /cluster/home/[username] </code>
+
+Project folder: Run jobs and store output files in a subfolder called your username
+
+<code> /cluster/projects/[project number]/[username] </code>
+
+Check disk usage and storage quota for home directory and project folder
+
+<code> dusage </code>
+
+Check disk usage of current folder and subfolders
+
+<code> du -hs </code>
+
+Find and remove files matching [filename] in current folder and subfolders
+
+<code> find . -name "[filename]" -exec rm {} \; </code>
+
+===Logfile===
+Excel sheet for tracking jobs can be downloaded here: [[Media:Logfile.xlsx]]
+It also includes conversion between supercell size, number of atoms and k-point grid for a given k-point density.
+
+===Job script===
+Sigma2 NRIS HPC clusters use Slurm as workload manager and job scheduler. Documentation is available on [https://documentation.sigma2.no/ documentation.sigma2.no/]
+
+Computations are run by submitting a job script to the queue
+
+<code> sbatch jobfile </code>
+
+View the queue for a user or project
+
+<code> squeue -u [username] </code>
+<code> squeue -p [project number] </code>
+
+Job scripts for Saga are available in the project folder
+ /cluster/projects/nn4604k/jobfile
+
+The job script below contains several SBATCH options
+
+Saga has 40 CPUs per node and it is recommended to use all CPUs on a node and a 1-2 nodes for optimal performance [https://documentation.sigma2.no/hpc_machines/saga.html documentation.sigma2.no/hpc_machines/saga]
+
+The module system is restored to avoid potential conflicts. There exist several compiled versions of VASP and specific versions are compiled for increased performance with gamma K-point grid
+ module restore system
+ module load VASPModules
+ module load VASP/6.4.1-intel-2022b-std-wannier90-libxc-hdf5-beef-0a928426e459cf2aeab3d0bf8f441c74
+ # module load VASP/6.4.1-intel-2022b-gam-wannier90-libxc-hdf5-beef-0a928426e459cf2aeab3d0bf8f441c74
+
+Available modules on the cluster can be listed with
+ module avail
+
+Files are copied to a temporary job folder ($SCRATCH). The WAVECAR file is copied if it is available.
+ cp [filenames] $SCRATCH
+ if [ -f WAVECAR ]
+ then
+ cp WAVECAR $SCRATCH
+ fi
+
+Output files are copied from the job folder to the submit folder when job completes. Savefile will also copy files if the job crashes.
+ savefile [filenames] 
+
+The job is started from the $SCRATCH folder and the elapsed time is recorded to slurm output
+ cd $SCRATCH
+ time srun vasp
+
+The progression of the job can be viewed in the slurm output file slurm-[slurm-id] in the submit folder once the job is running.
+
+The working folder can be accessed while the job is running
+<code> /cluster/work/jobs/[slurm-id] </code>
+
+
+'''Example job script'''
+ #!/bin/bash
+ 
+ #SBATCH --job-name=jobname
+ #SBATCH --account=nn4604k
+ #SBATCH --time=10:00:00
+ #SBATCH --mem-per-cpu=4000M
+ #SBATCH --nodes=1
+ #SBATCH --ntasks-per-node=40
+ 
+ set -o errexit 
+ set -o nounset
+ 
+module restore system
+module load VASPModules
+module load VASP/6.4.1-intel-2022b-std-wannier90-libxc-hdf5-beef-0a928426e459cf2aeab3d0bf8f441c74
+# module load VASP/6.4.1-intel-2022b-gam-wannier90-libxc-hdf5-beef-0a928426e459cf2aeab3d0bf8f441c74
+ 
+ cp INCAR POSCAR POTCAR KPOINTS $SCRATCH
+ if [ -f WAVECAR ]
+ then
+ cp WAVECAR $SCRATCH
+ fi
+ 
+ savefile CONTCAR OUTCAR DOSCAR CHGCAR WAVECAR 
+ 
+ cd $SCRATCH
+ time srun vasp
+
+===Aliases and settings===
+Define useful shortcuts by adding aliases to <code> ~/.bash_profile </code>
+
+ alias l='ls -l'
+ alias la='ls -l -a'
+ alias ..='cd ..'
+ alias nn='cd /cluster/projects/[project number]'
+ alias q='squeue -u [username]'
+
+You can also add commands such as automatically changing directory to the project folder upon login.
+
+Changes will take effect on next login or manually with <code> source ~/.bash_profile </code>.
+
+
+vim can be configured in <code> ~/.vimrc </code>. Turn on line numbers to easily jump to a specific line using <code> :[line number] </code>
+ set number
+
+===Shell scripting===
+Shell scripting can be used to submit several jobs as exemplified below
+
+ #!/bin/bash
+ 
+ for i in $(seq 0.0 0.2 1.4); do
+    for j in $(seq 0.0 0.2 1.4); do
+       dir="$i-$j"
+       echo $dir
+       mkdir $dir
+       cp INCAR POTCAR KPOINTS jobfile $dir
+       cp "prefix_$dir.POSCAR.vasp" $dir/POSCAR
+       cd $dir
+       sbatch jobfile
+       cd ..
+    done
+ done
+
+==First VASP calculation==
+{| class="wikitable"
+|+ Five files required for a VASP simulation
+!File
+!Description
+|-
+|POSCAR
+|Structure file that specifies the unit cell vectors, types of atoms and their positions
+|-
+|POTCAR
+|Pseudopotentials for the atoms (same order as in POSCAR)
+|-
+|INCAR
+|Input parameters for the calculation including relaxation algorithms, functionals, convergence criteria, etc.
+|-
+|KPOINTS
+|k-point grid
+|-
+|jobfile
+|job script
+|}
+
+'''Cell volume relaxation of BaZrO<sub>3</sub> unit cell'''
+
+Go to the project folder: <code> cd /cluster/projects/nn4604k </code>
+
+Or if you have defined an [[#Aliases and settings|alias]]:<code> nn </code> 
+
+Create a subfolder with your username (if you have not done so already)
+
+<code> mkdir [username] </code>
+
+<code> cd [username] </code>
+
+<code> mkdir test </code>
+
+<code> cd test </code>
+
+Copy all the files from the 'vasptest' folder (POSCAR, KPOINTS and INCAR) to your current folder (remember to use TAB to autocomplete the path)
+
+<code> cp ../../vasptest/* . </code>
+
+Copy the necessary POTCAR files (press the UP arrow key to bring up your previous command)
+
+<code> cp ../../potpaw_PBE.54/Ba_sv/POTCAR POTCAR_Ba_sv </code>
+
+<code> cp ../../potpaw_PBE.54/Zr_sv/POTCAR POTCAR_Zr_sv </code>
+
+<code> cp ../../potpaw_PBE.54/O/POTCAR POTCAR_O </code>
+
+Check the order of the atoms in POSCAR file
+
+<code> head POSCAR </code>
+
+Concatenate the POTCAR files in the same order to a file named POTCAR
+
+<code> cat POTCAR_Ba_sv POTCAR_Zr_sv POTCAR_O > POTCAR </code>
+
+Check the order of the POTCAR
+
+<code> grep TITEL POTCAR </code>
+
+Copy job script to current folder
+
+<code> cp ../../jobfile . </code>
+
+Submit the job
+
+<code> sbatch jobfile </code>
+
+Check the queue
+
+<code> squeue -u [username] </code>
+
+Or if you have defined an [[#Aliases and settings|alias]]:<code> q </code> 
+
+When the job starts you can follow the progress in the slurm log file
+
+<code> less slurm-[slurm-id] </code>
+
+After three ionic relaxation steps, the required accuracy has been reached and the output files defined [[#Job script|job script]] are copied to the current folder.
+
+ 3 F= -.41724097E+02 E0= -.41724097E+02  d E =-.431449E-02
+ curvature:  -0.24 expect dE=-0.515E-06 dE for cont linesearch -0.515E-06
+ trial: gam= 0.00000 g(F)=  0.940E-64 g(S)=  0.213E-05 ort =-0.198E-03 (trialstep = 0.895E+00)
+ search vector abs. value=  0.213E-05
+ reached required accuracy - stopping structural energy minimisation
+ writing wavefunctions
+
+Check the lattice parameter in the POSCAR (input) and output (CONTCAR)
+
+<code> head POSCAR </code>
+
+ BaZrO3                           
+   1.00000000000000     
+     4.2200000000000000    0.0000000000000000    0.0000000000000000
+     0.0000000000000000    4.2200000000000000    0.0000000000000000
+     0.0000000000000000    0.0000000000000000    4.2200000000000000
+ ...
+<code> head CONTCAR </code>
+
+ BaZrO3                                  
+   1.00000000000000     
+     4.2353879522908331   -0.0000000000000000   -0.0000000000000000
+     0.0000000000000000    4.2353879522908331   -0.0000000000000000
+     0.0000000000000000   -0.0000000000000000    4.2353879522908331
+ ...
+The optimized cubic lattice parameter is 4.2354 Å.

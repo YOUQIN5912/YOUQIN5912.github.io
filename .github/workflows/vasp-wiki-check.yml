@@ -1,0 +1,40 @@
+name: VASP Wiki checks
+
+on:
+  pull_request:
+    paths:
+      - '_pages/vasp-wiki/**'
+      - '_layouts/vasp-wiki.html'
+      - '_data/vasp_wiki.json'
+      - '_data/navigation.yml'
+      - '_includes/head/custom.html'
+      - 'assets/css/vasp-wiki.css'
+      - 'assets/js/vasp-wiki.js'
+      - 'files/vasp-wiki/**'
+      - 'scripts/vasp_wiki/**'
+      - '.github/workflows/vasp-wiki-check.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify source fidelity and generated pages
+        run: python3 scripts/vasp_wiki/check.py
+      - name: Build with the GitHub Pages Jekyll environment
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+          future: true
+      - name: Check rendered links, code blocks and downloads
+        run: python3 scripts/vasp_wiki/check.py --site _site
+      - name: Save review preview without deployment
+        uses: actions/upload-artifact@v4
+        with:
+          name: vasp-wiki-preview
+          path: _site
+          retention-days: 14

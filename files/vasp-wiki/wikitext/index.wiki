@@ -1,0 +1,17 @@
+Welcome to VASPwiki hosted by the [https://www.mn.uio.no/kjemi/english/research/groups/electrochemistry/ Electrochemistry group] within the Centre for Materials Science and Nanotechnology ([https://www.mn.uio.no/smn/english/ SMN]) at the University of Oslo, Norway.
+
+The wiki gathers beginner's guides and an overview of methods, software and resources for doing DFT calculations and data processing with specific details related to the high-performance computers within the Norwegian Research Infrastructure Services ([https://www.sigma2.no/nris NRIS]). Disclaimer: use at your own risk.
+
+Contact: [https://www.mn.uio.no/kjemi/english/people/aca/jpolfus/ Associate Prof. Jonathan Polfus]
+
+{{:Getting started}}
+{{:Methods}}
+{{:Software and resources}}
+
+= Getting started with MediaWiki =
+Consult the [//meta.wikimedia.org/wiki/Help:Contents User's Guide] for information on using the wiki software.
+* [//www.mediawiki.org/wiki/Special:MyLanguage/Manual:Configuration_settings Configuration settings list]
+* [//www.mediawiki.org/wiki/Special:MyLanguage/Manual:FAQ MediaWiki FAQ]
+* [https://lists.wikimedia.org/mailman/listinfo/mediawiki-announce MediaWiki release mailing list]
+* [//www.mediawiki.org/wiki/Special:MyLanguage/Localisation#Translation_resources Localise MediaWiki for your language]
+* [//www.mediawiki.org/wiki/Special:MyLanguage/Manual:Combating_spam Learn how to combat spam on your wiki]

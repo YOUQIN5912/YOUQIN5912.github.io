@@ -9,3 +9,5 @@ main:
     url: /news/
   - title: "CV"
     url: /cv/
+  - title: "VASP Wiki"
+    url: /vasp-wiki/
