@@ -6,6 +6,8 @@ permalink: /research/
 author_profile: true
 ---
 
+{% include research-map.html %}
+
 I study how atomic arrangements and defects determine the behaviour of functional materials. My research connects the synthesis and processing of bulk and nanoscale solids with structural measurements and calculations. At the University of Oslo, I focus on how perovskite oxides respond to changes in temperature and gas atmosphere during electrochemical energy conversion.
 
 ## Complex functional and energy materials {#functional-materials}

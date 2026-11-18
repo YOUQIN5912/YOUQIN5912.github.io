@@ -1,0 +1,165 @@
+[
+  {
+    "id": "materials",
+    "title": "Materials",
+    "detail": "Synthesis & crystal chemistry",
+    "tone": "teal",
+    "target": "pymatgen",
+    "images": [
+      "materials"
+    ],
+    "connects": [
+      "bragg",
+      "stem",
+      "dft"
+    ]
+  },
+  {
+    "id": "dft",
+    "title": "DFT / AIMD",
+    "detail": "VASP",
+    "tone": "violet",
+    "target": "vasp",
+    "images": [
+      "dft"
+    ],
+    "connects": [
+      "properties",
+      "pdf"
+    ]
+  },
+  {
+    "id": "properties",
+    "title": "Properties",
+    "detail": "Structure–property analysis",
+    "tone": "amber",
+    "target": "python-and-matplotlib",
+    "images": [
+      "properties"
+    ],
+    "connects": [
+      "ai",
+      "solved"
+    ]
+  },
+  {
+    "id": "ai",
+    "title": "AI/ML",
+    "detail": "Data-driven screening",
+    "tone": "amber",
+    "target": "materials-informatics",
+    "images": [
+      "ai"
+    ],
+    "connects": [
+      "solved"
+    ]
+  },
+  {
+    "id": "stem",
+    "title": "STEM / EDS",
+    "detail": "Imaging & elemental maps",
+    "tone": "teal",
+    "target": "microscopy",
+    "images": [
+      "stem"
+    ],
+    "connects": [
+      "xafs",
+      "bragg"
+    ]
+  },
+  {
+    "id": "bragg",
+    "title": "Bragg diffraction",
+    "detail": "GSAS-II / TOPAS",
+    "tone": "teal",
+    "target": "diffraction",
+    "images": [
+      "bragg"
+    ],
+    "connects": [
+      "pdf"
+    ]
+  },
+  {
+    "id": "pdf",
+    "title": "Total scattering",
+    "detail": "Pair distribution function",
+    "tone": "teal",
+    "target": "pdfgetx3-and-pdfgetn3",
+    "images": [
+      "pdf"
+    ],
+    "connects": [
+      "small-box",
+      "discus",
+      "rmc"
+    ]
+  },
+  {
+    "id": "small-box",
+    "title": "Small-box refinement",
+    "detail": "PDFgui / TOPAS",
+    "tone": "violet",
+    "target": "pdfgui",
+    "images": [
+      "small-box",
+      "local-shell"
+    ],
+    "connects": [
+      "solved"
+    ]
+  },
+  {
+    "id": "xafs",
+    "title": "XAFS",
+    "detail": "XANES & EXAFS",
+    "tone": "teal",
+    "target": "xas",
+    "images": [
+      "xafs"
+    ],
+    "connects": [
+      "pdf"
+    ]
+  },
+  {
+    "id": "discus",
+    "title": "DISCUS",
+    "detail": "Disorder & diffuse scattering",
+    "tone": "violet",
+    "target": "discus",
+    "images": [
+      "discus"
+    ],
+    "connects": [
+      "solved"
+    ]
+  },
+  {
+    "id": "rmc",
+    "title": "Big-box refinement",
+    "detail": "RMCProfile",
+    "tone": "violet",
+    "target": "rmcprofile",
+    "images": [
+      "rmc-pairs",
+      "rmc-box"
+    ],
+    "connects": [
+      "solved"
+    ]
+  },
+  {
+    "id": "solved",
+    "title": "Solved structure",
+    "detail": "Three-dimensional model",
+    "tone": "violet",
+    "target": "vesta",
+    "images": [
+      "solved"
+    ],
+    "connects": []
+  }
+]

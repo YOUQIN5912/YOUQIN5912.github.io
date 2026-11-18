@@ -8,7 +8,7 @@ author_profile: false
 
 <main id="main-content" class="research-home site-inner">
   <h1>Software</h1>
-  <p class="site-inner__intro">Tools I use for structural characterisation, atomistic modelling, and data analysis. I share practical SOPs, tutorials and workshop notes below, covering workflows from laboratory diffraction to synchrotron PDF and XAS.</p>
+  <p class="site-inner__intro">Tools and resources for structural characterisation, atomistic modelling, and data analysis. I share practical SOPs, tutorials and workshop notes below, covering workflows from laboratory diffraction to synchrotron PDF and XAS.</p>
 <p class="software-channel">
 <a href="https://www.youtube.com/@qinyou7272">Visit my YouTube channel · @qinyou7272</a>
 </p>
@@ -55,7 +55,7 @@ author_profile: false
     <h2 id="{{ group.id }}">{{ group.title | escape }}</h2>
     <ul class="software-list">
       {% for item in group.items %}
-      <li class="software-entry">
+      <li class="software-entry" id="{{ item.name | slugify }}">
         <div class="software-entry__summary">
           <h3>{{ item.name | escape }}</h3>
           <p>{{ item.description | escape }}</p>
