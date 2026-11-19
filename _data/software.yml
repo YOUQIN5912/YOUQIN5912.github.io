@@ -38,6 +38,11 @@
       links:
         - label: DISCUS Suite
           url: https://tproffen.github.io/DiffuseCode/
+    - name: Total Scattering School
+      description: Recorded lectures and software tutorials from the 2021 virtual school, covering X-ray and neutron total scattering, data reduction and PDF analysis.
+      links:
+        - label: Workshop recordings
+          url: https://scatteringpage.utk.edu/ts-schoolvideos/
 
 - id: xas
   title: X-ray absorption spectroscopy
@@ -63,6 +68,11 @@
       links:
         - label: Documentation
           url: https://vasp.at/wiki/
+    - name: Ab initio molecular dynamics (AIMD)
+      description: DFT forces are calculated at each time step to follow atomic motion and study diffusion, thermal disorder and structural fluctuations at finite temperature.
+      links:
+        - label: Molecular dynamics in VASP
+          url: https://vasp.at/wiki/Molecular-dynamics_calculations
     - name: CASTEP
       description: Plane-wave DFT calculations for crystal structure and materials properties.
       links:
@@ -78,6 +88,20 @@
       links:
         - label: Documentation
           url: https://pymatgen.org/
+
+- id: thermodynamics
+  title: Thermodynamic modelling
+  items:
+    - name: HSC Chemistry
+      description: Thermochemical calculations for reaction energetics, equilibrium compositions and stability diagrams, with tools for process simulation.
+      links:
+        - label: Metso product page
+          url: https://www.metso.com/portfolio/hsc-chemistry/
+    - name: FactSage
+      description: Thermochemical databases and calculation tools for multicomponent phase equilibria and phase diagrams.
+      links:
+        - label: FactSage website
+          url: https://factsage.com/
 
 - id: microscopy
   title: Electron microscopy and elemental maps
