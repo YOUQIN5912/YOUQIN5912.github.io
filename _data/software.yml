@@ -88,6 +88,16 @@
       links:
         - label: Documentation
           url: https://pymatgen.org/
+    - name: Materials Studio
+      description: BIOVIA software for building, simulating and analysing atomistic and molecular models across multiple scales.
+      links:
+        - label: Dassault Systèmes product page
+          url: https://www.3ds.com/products/biovia/materials-studio
+    - name: Atomsk
+      description: Command-line tools for building supercells, interfaces and defects and converting atomistic file formats.
+      links:
+        - label: Project site
+          url: https://atomsk.univ-lille.fr/
 
 - id: thermodynamics
   title: Thermodynamic modelling
@@ -127,6 +137,11 @@
       links:
         - label: Project site
           url: https://jp-minerals.org/vesta/en/
+    - name: OVITO
+      description: Visualising and analysing atomistic simulation trajectories, including local structure, defects and atomic displacements.
+      links:
+        - label: Project site
+          url: https://www.ovito.org/
 
 - id: materials-informatics
   title: AI/ML and materials screening
