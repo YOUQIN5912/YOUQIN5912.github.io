@@ -73,4 +73,39 @@ author_profile: false
     </ul>
   </section>
   {% endfor %}
+
+  <section class="software-group" aria-labelledby="other-useful-links">
+    <h2 id="other-useful-links">Other useful links</h2>
+    <p>Selected resources from the <a href="https://scatteringpage.utk.edu/useful-links/">Page Research Group at the University of Tennessee, Knoxville</a>, with a few additions.</p>
+
+    <h3>Materials Science</h3>
+    <ul>
+      <li><a href="https://next-gen.materialsproject.org/materials/">Materials Project</a> · Computed crystal structures and materials properties</li>
+      <li><a href="https://www.rruff.net/">RRUFF mineral database</a> · Mineral chemistry, Raman spectra and diffraction data</li>
+      <li><a href="http://abulafia.mt.ic.ac.uk/shannon/ptable.php">Shannon ionic radii</a> · Interactive periodic table and <a href="https://journals.iucr.org/paper?cnor=a12967">original reference</a></li>
+    </ul>
+
+    <h3>Crystal Structure Resources</h3>
+    <ul>
+      <li><a href="https://icsd.fiz-karlsruhe.de/">Inorganic Crystal Structure Database (ICSD)</a></li>
+      <li><a href="https://www.crystallography.net/cod/search.html">Crystallography Open Database (COD)</a> · Search structures and download CIFs</li>
+      <li><a href="https://www.rruff.net/amcsd/">American Mineralogist Crystal Structure Database (AMCSD)</a></li>
+    </ul>
+
+    <h3>Crystallography / Symmetry</h3>
+    <ul>
+      <li><a href="https://cryst.ehu.es/">Bilbao Crystallographic Server</a> · Space-group tables and symmetry tools</li>
+      <li><a href="https://symotter.org/">Symmetry Resources at Otterbein University</a> · Tutorials on point groups and symmetry</li>
+      <li><a href="https://iso.byu.edu/">ISOTROPY Software Suite</a> · Group-theoretical tools for crystal structures and phase transitions</li>
+      <li><a href="https://crystalsymmetry.wordpress.com/2014/08/15/the-space-group-list-project-as-a-poster/">The Space Group List Project</a> · Examples of space groups in real crystals</li>
+    </ul>
+
+    <h3>Scattering Properties</h3>
+    <ul>
+      <li><a href="https://11bm.xray.aps.anl.gov/absorb/">APS X-ray absorption calculator</a></li>
+      <li><a href="https://www.nist.gov/pml/x-ray-transition-energies-database">NIST X-ray Transition Energies Database</a></li>
+      <li><a href="https://www.ncnr.nist.gov/resources/n-lengths/">NIST neutron scattering lengths and cross sections</a></li>
+      <li><a href="https://www.ncnr.nist.gov/resources/activation/">NIST neutron activation and scattering calculator</a></li>
+    </ul>
+  </section>
 </main>
