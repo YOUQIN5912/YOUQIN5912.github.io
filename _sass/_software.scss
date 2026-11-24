@@ -253,7 +253,8 @@
 }
 
 .facility-map-dialog {
-  width: min(96vw, 1807px);
+  width: 96vw;
+  max-width: 1807px;
   max-height: 92vh;
   padding: 0;
   border: 1px solid #d8e3df;
@@ -262,7 +263,7 @@
 }
 
 .facility-map-dialog::backdrop {
-  background: rgb(23 53 47 / 60%);
+  background: rgba(23, 53, 47, 0.6);
 }
 
 .facility-map-dialog form {
