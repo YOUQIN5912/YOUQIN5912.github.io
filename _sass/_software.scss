@@ -134,22 +134,55 @@
   margin: 0;
 }
 
-.resource-hero .software-entry__links {
-  margin-top: 1rem;
+.software-sidebar__nav {
+  margin-top: 0.75rem;
 }
 
-.resource-hero .software-entry__links a {
-  background: #fff;
-}
-
-.software-categories,
-.facility-list {
+.software-sidebar .wiki-chapters {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
-  gap: 0.75rem;
-  padding: 0;
+  gap: 0.3rem;
+}
+
+.software-sidebar .wiki-chapters .software-category {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--resource-tint);
+  color: var(--home-ink);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.software-sidebar .software-category i {
+  flex: 0 0 1rem;
+  text-align: center;
+}
+
+.software-sidebar .software-category:hover {
+  text-decoration: underline;
+}
+
+.software-overview {
+  max-width: 64ch;
+}
+
+.software-page .wiki-content .software-entry h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1.06rem;
+}
+
+.software-page .wiki-content .software-entry p {
   margin: 0;
-  list-style: none;
+}
+
+.software-page .wiki-content .software-tutorial__summary p + p {
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 46rem) {
+  .software-sidebar .wiki-chapters {
+    display: flex;
+  }
 }
 
 .software-category--diffraction { --resource-tint: #e8f1f8; }
@@ -160,47 +193,6 @@
 .software-category--visualisation { --resource-tint: #e7f3f4; }
 .software-category--materials-informatics { --resource-tint: #eef2e2; }
 
-.software-category {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 0.4rem;
-  height: 100%;
-  padding: 1rem;
-  background: var(--resource-tint);
-  border: 1px solid var(--home-line);
-  border-radius: 0.65rem;
-  text-decoration: none;
-}
-
-.software-category:hover {
-  border-color: var(--home-accent);
-  text-decoration: none;
-}
-
-.software-category:hover .software-category__title {
-  text-decoration: underline;
-}
-
-.software-category__title {
-  color: var(--home-ink);
-  font-weight: 700;
-  line-height: 1.35;
-}
-
-.software-category__summary {
-  color: var(--home-text);
-  font-size: 0.85rem;
-  line-height: 1.45;
-}
-
-.software-category__arrow {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  color: var(--home-accent);
-}
 
 .resource-icon {
   display: inline-grid;
@@ -212,11 +204,6 @@
   border-radius: 0.45rem;
   color: var(--home-ink);
   font-size: 0.95rem;
-}
-
-.software-category .resource-icon {
-  flex: none;
-  background: #fff;
 }
 
 .resource-page h2[id] {
@@ -235,37 +222,74 @@
   border-radius: 0.9rem;
 }
 
-.facility-map a,
-.facility-map img {
-  display: block;
+.facility-map__viewport {
+  overflow: hidden;
   border-radius: 0.55rem;
 }
 
-.facility-map a {
-  width: 100%;
-  text-decoration: none;
-}
-
-.facility-map img {
+.facility-map__viewport img {
+  display: block;
   width: 100%;
   height: auto;
-  margin: 0;
+  /* The title and subtitle occupy the first 126 pixels of the 1805-pixel-wide source. */
+  margin: -6.98% 0 0;
 }
 
 .facility-map__action {
   display: block;
-  margin: 0.45rem 0.35rem 0.15rem;
-  text-align: right;
+  margin: 0.45rem 0.35rem 0.15rem auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--home-accent);
+  font: inherit;
   font-size: 0.82rem;
   font-weight: 600;
+  cursor: pointer;
 }
 
-.facility-map a:hover .facility-map__action {
+.facility-map__action:hover {
   text-decoration: underline;
 }
 
+.facility-map-dialog {
+  width: min(96vw, 1807px);
+  max-height: 92vh;
+  padding: 0;
+  border: 1px solid #d8e3df;
+  border-radius: 0.65rem;
+  color: var(--home-ink);
+}
+
+.facility-map-dialog::backdrop {
+  background: rgb(23 53 47 / 60%);
+}
+
+.facility-map-dialog form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+  padding: 0.65rem 1rem;
+}
+
+.facility-map-dialog__scroll {
+  max-height: calc(92vh - 4rem);
+  overflow: auto;
+}
+
+.facility-map-dialog .facility-map__viewport {
+  width: 1805px;
+}
+
 .facility-list {
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .facility-list > li {

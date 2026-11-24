@@ -6,33 +6,35 @@ permalink: /software/
 author_profile: false
 ---
 
-<main id="main-content" class="research-home site-inner resource-page">
-  <header class="resource-hero">
-    <h1>Software</h1>
-    <h2>Overview</h2>
-    <p>Tools and resources for structural characterisation, atomistic modelling, and data analysis. I share practical SOPs, tutorials and workshop notes below, covering workflows from laboratory diffraction to synchrotron PDF and XAS.</p>
-    <ul class="software-entry__links">
-      <li><a href="#workshop-materials">Tutorials &amp; workshop materials</a></li>
-      <li><a href="#other-useful-links">Other useful links</a></li>
-      <li><a href="https://www.youtube.com/@qinyou7272">YouTube · @qinyou7272</a></li>
-    </ul>
-  </header>
+<div class="research-home wiki-shell software-page">
+  <a class="wiki-skip" href="#main-content">Skip to software</a>
+  <aside class="wiki-sidebar software-sidebar">
+    <a class="wiki-brand" href="{{ '/software/' | relative_url }}">Software</a>
+    <nav class="software-sidebar__nav" aria-label="Software categories">
+      <ul class="wiki-chapters">
+        <li><a href="#overview">Overview</a></li>
+        {% for group in site.data.software %}
+        <li>
+          <a class="software-category software-category--{{ group.id }}" href="#{{ group.id }}">
+            <i class="fas fa-{{ group.icon }}" aria-hidden="true"></i>
+            {{ group.title | escape }}
+          </a>
+        </li>
+        {% endfor %}
+        <li><a href="#workshop-materials">Tutorials &amp; workshop materials</a></li>
+        <li><a href="#other-useful-links">Other useful links</a></li>
+      </ul>
+    </nav>
+  </aside>
 
-  <nav class="software-group" aria-labelledby="software-categories">
-    <h2 id="software-categories">Browse by category</h2>
-    <ul class="software-categories">
-      {% for group in site.data.software %}
-      <li>
-        <a class="software-category software-category--{{ group.id }}" href="#{{ group.id }}">
-          <i class="fas fa-{{ group.icon }} resource-icon" aria-hidden="true"></i>
-          <span class="software-category__title">{{ group.title | escape }}</span>
-          <span class="software-category__summary">{{ group.summary | escape }}</span>
-          <span class="software-category__arrow" aria-hidden="true">&darr;</span>
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-  </nav>
+  <main id="main-content" class="wiki-article" tabindex="-1">
+    <header class="wiki-header">
+      <p class="wiki-eyebrow">Research software and resources</p>
+      <h1 id="overview">Overview</h1>
+    </header>
+    <div class="wiki-content">
+      <p class="software-overview">Tools and resources for structural characterisation, atomistic modelling, and data analysis. I share practical SOPs, tutorials and workshop notes below, covering workflows from laboratory diffraction to synchrotron PDF and XAS.</p>
+      <p><a href="https://www.youtube.com/@qinyou7272">YouTube · @qinyou7272</a></p>
 
 <section class="software-workshops" aria-labelledby="workshop-materials">
 <h2 id="workshop-materials">Tutorials &amp; workshop materials</h2>
@@ -130,4 +132,6 @@ author_profile: false
       <li><a href="https://www.ncnr.nist.gov/resources/activation/">NIST neutron activation and scattering calculator</a></li>
     </ul>
   </section>
-</main>
+    </div>
+  </main>
+</div>

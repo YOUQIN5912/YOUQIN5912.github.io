@@ -13,12 +13,27 @@ author_profile: false
     <p>I actively use synchrotron and neutron facilities for element-specific and length-scale-resolved materials analysis.</p>
   </header>
 
+  {% assign facility_map_image = '/images/collaborative-facilities.webp' | relative_url %}
   <figure class="facility-map">
-    <a href="{{ '/images/collaborative-facilities.webp' | relative_url }}" aria-label="Open the full-size map of collaborative facilities">
-      <img src="{{ '/images/collaborative-facilities.webp' | relative_url }}" width="1805" height="986" alt="World map connecting Norway with collaborative synchrotron and neutron facilities in Europe, the United States and China.">
-      <span class="facility-map__action">View full-size map <span aria-hidden="true">&nearr;</span></span>
-    </a>
+    <div class="facility-map__viewport">
+      <img src="{{ facility_map_image }}" width="1805" height="986" alt="World map connecting Norway with collaborative synchrotron and neutron facilities in Europe, the United States and China.">
+    </div>
+    <button type="button" class="facility-map__action" id="facility-map-open" aria-haspopup="dialog">
+      View full-size map <span aria-hidden="true">&nearr;</span>
+    </button>
   </figure>
+
+  <dialog class="facility-map-dialog" id="facility-map-dialog" aria-labelledby="facility-map-title">
+    <form method="dialog">
+      <strong id="facility-map-title">Synchrotron &amp; Neutron Facilities</strong>
+      <button type="submit">Close</button>
+    </form>
+    <div class="facility-map-dialog__scroll" tabindex="0" role="region" aria-label="Full-size map">
+      <div class="facility-map__viewport">
+        <img src="{{ facility_map_image }}" width="1805" height="986" alt="World map of collaborative synchrotron and neutron facilities.">
+      </div>
+    </div>
+  </dialog>
 
   <section class="software-group" aria-labelledby="synchrotron-facilities">
     <h2 id="synchrotron-facilities">Synchrotron facilities</h2>
@@ -80,3 +95,8 @@ author_profile: false
     </ul>
   </section>
 </main>
+<script>
+  document.getElementById('facility-map-open').addEventListener('click', function () {
+    document.getElementById('facility-map-dialog').showModal();
+  });
+</script>

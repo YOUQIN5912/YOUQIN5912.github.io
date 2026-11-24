@@ -1,7 +1,6 @@
 - id: diffraction
   title: Diffraction and total scattering
   icon: chart-area
-  summary: Rietveld refinement, total scattering and pair distribution functions.
   items:
     - name: TOPAS
       icon: chart-area
@@ -57,7 +56,6 @@
 - id: xas
   title: X-ray absorption spectroscopy
   icon: chart-line
-  summary: XANES and EXAFS processing, visualisation and fitting.
   items:
     - name: Athena and Artemis
       icon: chart-line
@@ -77,7 +75,6 @@
 - id: modelling
   title: Atomistic modelling
   icon: atom
-  summary: DFT, molecular dynamics and crystal structure preparation.
   items:
     - name: VASP
       icon: atom
@@ -125,7 +122,6 @@
 - id: thermodynamics
   title: Thermodynamic modelling
   icon: temperature-high
-  summary: Phase equilibria, reaction energetics and stability diagrams.
   items:
     - name: HSC Chemistry
       icon: flask
@@ -143,7 +139,6 @@
 - id: microscopy
   title: Electron microscopy and elemental maps
   icon: microscope
-  summary: STEM images, elemental maps and line profiles.
   items:
     - name: Fiji / ImageJ
       icon: microscope
@@ -155,7 +150,6 @@
 - id: visualisation
   title: Data analysis and visualisation
   icon: chart-bar
-  summary: Data processing, crystal structures, trajectories and figures.
   items:
     - name: Python and Matplotlib
       icon: file-code
@@ -181,7 +175,6 @@
 - id: materials-informatics
   title: AI/ML and materials screening
   icon: project-diagram
-  summary: Materials descriptors, machine learning and property screening.
   items:
     - name: matminer
       icon: database
