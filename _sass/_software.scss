@@ -147,6 +147,8 @@
   display: flex;
   align-items: center;
   gap: 0.45rem;
+  border: 1px solid #c7d6d0;
+  border-radius: 0.45rem;
   background: var(--resource-tint);
   color: var(--home-ink);
   font-weight: 600;
@@ -159,6 +161,7 @@
 }
 
 .software-sidebar .software-category:hover {
+  border-color: var(--home-accent);
   text-decoration: underline;
 }
 

@@ -8,6 +8,8 @@ on:
       - '_data/vasp_wiki.json'
       - '_data/navigation.yml'
       - '_includes/head/custom.html'
+      - '_includes/head.html'
+      - '_sass/_software.scss'
       - 'assets/css/vasp-wiki.css'
       - 'assets/js/vasp-wiki.js'
       - 'files/vasp-wiki/**'
