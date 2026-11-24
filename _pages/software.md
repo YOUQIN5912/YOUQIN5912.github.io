@@ -6,12 +6,34 @@ permalink: /software/
 author_profile: false
 ---
 
-<main id="main-content" class="research-home site-inner">
-  <h1>Software</h1>
-  <p class="site-inner__intro">Tools and resources for structural characterisation, atomistic modelling, and data analysis. I share practical SOPs, tutorials and workshop notes below, covering workflows from laboratory diffraction to synchrotron PDF and XAS.</p>
-<p class="software-channel">
-<a href="https://www.youtube.com/@qinyou7272">Visit my YouTube channel · @qinyou7272</a>
-</p>
+<main id="main-content" class="research-home site-inner resource-page">
+  <header class="resource-hero">
+    <h1>Software</h1>
+    <h2>Overview</h2>
+    <p>Tools and resources for structural characterisation, atomistic modelling, and data analysis. I share practical SOPs, tutorials and workshop notes below, covering workflows from laboratory diffraction to synchrotron PDF and XAS.</p>
+    <ul class="software-entry__links">
+      <li><a href="#workshop-materials">Tutorials &amp; workshop materials</a></li>
+      <li><a href="#other-useful-links">Other useful links</a></li>
+      <li><a href="https://www.youtube.com/@qinyou7272">YouTube · @qinyou7272</a></li>
+    </ul>
+  </header>
+
+  <nav class="software-group" aria-labelledby="software-categories">
+    <h2 id="software-categories">Browse by category</h2>
+    <ul class="software-categories">
+      {% for group in site.data.software %}
+      <li>
+        <a class="software-category software-category--{{ group.id }}" href="#{{ group.id }}">
+          <i class="fas fa-{{ group.icon }} resource-icon" aria-hidden="true"></i>
+          <span class="software-category__title">{{ group.title | escape }}</span>
+          <span class="software-category__summary">{{ group.summary | escape }}</span>
+          <span class="software-category__arrow" aria-hidden="true">&darr;</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
 <section class="software-workshops" aria-labelledby="workshop-materials">
 <h2 id="workshop-materials">Tutorials &amp; workshop materials</h2>
 <div class="software-tutorials">
@@ -51,13 +73,13 @@ author_profile: false
 </section>
 
   {% for group in site.data.software %}
-  <section class="software-group" aria-labelledby="{{ group.id }}">
+  <section class="software-group software-category--{{ group.id }}" aria-labelledby="{{ group.id }}">
     <h2 id="{{ group.id }}">{{ group.title | escape }}</h2>
     <ul class="software-list">
       {% for item in group.items %}
       <li class="software-entry" id="{{ item.name | slugify }}">
         <div class="software-entry__summary">
-          <h3>{{ item.name | escape }}</h3>
+          <h3><i class="fas fa-{{ item.icon }} resource-icon" aria-hidden="true"></i> {{ item.name | escape }}</h3>
           <p>{{ item.description | escape }}</p>
         </div>
         {% if item.links and item.links.size > 0 %}

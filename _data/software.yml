@@ -1,7 +1,10 @@
 - id: diffraction
   title: Diffraction and total scattering
+  icon: chart-area
+  summary: Rietveld refinement, total scattering and pair distribution functions.
   items:
     - name: TOPAS
+      icon: chart-area
       description: Rietveld refinement of powder diffraction data and real-space fitting of atomic pair distribution functions.
       links:
         - label: TOPAS Academic
@@ -9,36 +12,43 @@
         - label: Bruker TOPAS
           url: https://www.bruker.com/en/products-and-solutions/diffractometers-and-x-ray-microscopes/x-ray-diffractometers/diffrac-suite-software/diffrac-topas.html
     - name: GSAS-II
+      icon: layer-group
       description: Processing and structural refinement of X-ray and neutron diffraction data.
       links:
         - label: Documentation
           url: https://gsasii.github.io/
     - name: FullProf Suite
+      icon: sliders-h
       description: Profile fitting and Rietveld refinement of X-ray and neutron powder diffraction patterns.
       links:
         - label: Project site
           url: https://www.ill.eu/en/for-ill-users/software-and-scientific-tools/software-scientific-tools/fullprof-suite/
     - name: PDFgui
+      icon: ruler-horizontal
       description: Refining structural models against X-ray and neutron pair distribution functions.
       links:
         - label: Documentation
           url: https://www.diffpy.org/diffpy.pdfgui/
     - name: PDFgetX3 and PDFgetN3
+      icon: exchange-alt
       description: Converting X-ray and neutron powder total scattering data, respectively, to pair distribution functions.
       links:
         - label: DiffPy documentation
           url: https://www.diffpy.org/products/pdfgetx.html
     - name: RMCProfile
+      icon: th
       description: Large-box reverse Monte Carlo modelling constrained by scattering data.
       links:
         - label: Project site
           url: https://rmcprofile.ornl.gov/
     - name: DISCUS
+      icon: braille
       description: Building models of disordered or defective crystals and simulating diffuse scattering and pair distribution functions.
       links:
         - label: DISCUS Suite
           url: https://tproffen.github.io/DiffuseCode/
     - name: Total Scattering School
+      icon: graduation-cap
       description: Recorded lectures and software tutorials from the 2021 virtual school, covering X-ray and neutron total scattering, data reduction and PDF analysis.
       links:
         - label: Workshop recordings
@@ -46,8 +56,11 @@
 
 - id: xas
   title: X-ray absorption spectroscopy
+  icon: chart-line
+  summary: XANES and EXAFS processing, visualisation and fitting.
   items:
     - name: Athena and Artemis
+      icon: chart-line
       description: I use Athena to align and normalise XAS scans, and Artemis to fit EXAFS using FEFF scattering paths.
       links:
         - label: Athena docs
@@ -55,6 +68,7 @@
         - label: Artemis docs
           url: https://bruceravel.github.io/demeter/documents/Artemis/index.html
     - name: Larix
+      icon: signal
       description: Interactive XANES and EXAFS processing, visualisation and analysis with XrayLarch.
       links:
         - label: Documentation
@@ -62,38 +76,47 @@
 
 - id: modelling
   title: Atomistic modelling
+  icon: atom
+  summary: DFT, molecular dynamics and crystal structure preparation.
   items:
     - name: VASP
+      icon: atom
       description: Density functional theory calculations for structural relaxation and defect energetics, and ab initio molecular dynamics.
       links:
         - label: Documentation
           url: https://vasp.at/wiki/
     - name: Ab initio molecular dynamics (AIMD)
+      icon: running
       description: DFT forces are calculated at each time step to follow atomic motion and study diffusion, thermal disorder and structural fluctuations at finite temperature.
       links:
         - label: Molecular dynamics in VASP
           url: https://vasp.at/wiki/Molecular-dynamics_calculations
     - name: CASTEP
+      icon: calculator
       description: Plane-wave DFT calculations for crystal structure and materials properties.
       links:
         - label: Project site
           url: https://www.castep.org/
     - name: Quantum ESPRESSO
+      icon: square-root-alt
       description: Plane-wave pseudopotential DFT calculations for periodic materials.
       links:
         - label: Project site
           url: https://www.quantum-espresso.org/
     - name: pymatgen
+      icon: code
       description: Representing and transforming crystal structures, preparing calculation inputs and analysing materials data in Python.
       links:
         - label: Documentation
           url: https://pymatgen.org/
     - name: Materials Studio
+      icon: cubes
       description: BIOVIA software for building, simulating and analysing atomistic and molecular models across multiple scales.
       links:
         - label: Dassault Systèmes product page
           url: https://www.3ds.com/products/biovia/materials-studio
     - name: Atomsk
+      icon: terminal
       description: Command-line tools for building supercells, interfaces and defects and converting atomistic file formats.
       links:
         - label: Project site
@@ -101,13 +124,17 @@
 
 - id: thermodynamics
   title: Thermodynamic modelling
+  icon: temperature-high
+  summary: Phase equilibria, reaction energetics and stability diagrams.
   items:
     - name: HSC Chemistry
+      icon: flask
       description: Thermochemical calculations for reaction energetics, equilibrium compositions and stability diagrams, with tools for process simulation.
       links:
         - label: Metso product page
           url: https://www.metso.com/portfolio/hsc-chemistry/
     - name: FactSage
+      icon: temperature-high
       description: Thermochemical databases and calculation tools for multicomponent phase equilibria and phase diagrams.
       links:
         - label: FactSage website
@@ -115,8 +142,11 @@
 
 - id: microscopy
   title: Electron microscopy and elemental maps
+  icon: microscope
+  summary: STEM images, elemental maps and line profiles.
   items:
     - name: Fiji / ImageJ
+      icon: microscope
       description: Inspecting STEM images and exported elemental maps with line profiles and overlays.
       links:
         - label: Fiji documentation
@@ -124,8 +154,11 @@
 
 - id: visualisation
   title: Data analysis and visualisation
+  icon: chart-bar
+  summary: Data processing, crystal structures, trajectories and figures.
   items:
     - name: Python and Matplotlib
+      icon: file-code
       description: Reproducible data processing, comparison of experiments and simulations, and preparation of publication figures.
       links:
         - label: Python
@@ -133,11 +166,13 @@
         - label: Matplotlib
           url: https://matplotlib.org/stable/
     - name: VESTA
+      icon: cube
       description: Visualising crystal structures, defects and atomistic supercells.
       links:
         - label: Project site
           url: https://jp-minerals.org/vesta/en/
     - name: OVITO
+      icon: film
       description: Visualising and analysing atomistic simulation trajectories, including local structure, defects and atomic displacements.
       links:
         - label: Project site
@@ -145,13 +180,17 @@
 
 - id: materials-informatics
   title: AI/ML and materials screening
+  icon: project-diagram
+  summary: Materials descriptors, machine learning and property screening.
   items:
     - name: matminer
+      icon: database
       description: Turning compositions and crystal structures into numerical descriptors and accessing curated materials datasets.
       links:
         - label: Documentation
           url: https://hackingmaterials.lbl.gov/matminer/
     - name: scikit-learn
+      icon: project-diagram
       description: Building and evaluating regression and classification models for materials property prediction and screening.
       links:
         - label: Documentation
