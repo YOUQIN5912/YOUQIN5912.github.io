@@ -23,18 +23,22 @@
 }
 
 .software-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: 0.75rem;
   margin: 0;
-  border-top: 1px solid var(--home-line);
 }
 
 .software-entry {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+  align-content: start;
+  align-items: flex-start;
   gap: 0.6rem 1rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--home-line);
+  padding: 1rem;
+  border: 1px solid var(--home-line);
+  border-radius: 0.65rem;
+  scroll-margin-top: 1.25rem;
 }
 
 .software-entry__summary {
@@ -43,7 +47,10 @@
 }
 
 .software-entry h3 {
-  margin: 0 0 0.23rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.55rem;
   color: var(--home-ink);
   font-size: 1.06rem;
   line-height: 1.35;
@@ -76,7 +83,6 @@
   border-color: var(--home-accent);
 }
 
-.software-channel{margin-top:1rem}
 .software-workshops{margin-top:clamp(2rem, 5vw, 3rem)}
 .activity-grid>.activity-card:only-child{grid-column:1 / -1}
 .activity-gallery{display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));align-items:start;gap:1rem;margin:1.25rem 0}
@@ -104,4 +110,223 @@
 .activity-card__body p{margin:0.5rem 0}
 .research-home__updates{margin-top:clamp(1.8rem, 4vw, 3rem)}
 @media (max-width: 42rem){.activity-grid,.activity-gallery{grid-template-columns:1fr}
+}
+
+.research-home.resource-page {
+  max-width: 64rem;
+}
+
+.resource-hero {
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  background: linear-gradient(125deg, #eaf3ee, #f5f9f7);
+  border: 1px solid var(--home-line);
+  border-radius: 0.9rem;
+}
+
+.resource-hero h2 {
+  margin: 1.1rem 0 0.35rem;
+  color: var(--home-accent);
+  font-size: 1rem;
+}
+
+.resource-hero p {
+  max-width: 64ch;
+  margin: 0;
+}
+
+.software-sidebar__nav {
+  margin-top: 0.75rem;
+}
+
+.software-sidebar .wiki-chapters {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.software-sidebar .wiki-chapters .software-category {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--resource-tint);
+  color: var(--home-ink);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.software-sidebar .software-category i {
+  flex: 0 0 1rem;
+  text-align: center;
+}
+
+.software-sidebar .software-category:hover {
+  text-decoration: underline;
+}
+
+.software-overview {
+  max-width: 64ch;
+}
+
+.software-page .wiki-content .software-entry h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1.06rem;
+}
+
+.software-page .wiki-content .software-entry p {
+  margin: 0;
+}
+
+.software-page .wiki-content .software-tutorial__summary p + p {
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 46rem) {
+  .software-sidebar .wiki-chapters {
+    display: flex;
+  }
+}
+
+.software-category--diffraction { --resource-tint: #e8f1f8; }
+.software-category--xas { --resource-tint: #eeeaf8; }
+.software-category--modelling { --resource-tint: #e6f3ee; }
+.software-category--thermodynamics { --resource-tint: #faf0df; }
+.software-category--microscopy { --resource-tint: #faecec; }
+.software-category--visualisation { --resource-tint: #e7f3f4; }
+.software-category--materials-informatics { --resource-tint: #eef2e2; }
+
+
+.resource-icon {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 2rem;
+  width: 2rem;
+  height: 2rem;
+  background: var(--resource-tint);
+  border-radius: 0.45rem;
+  color: var(--home-ink);
+  font-size: 0.95rem;
+}
+
+.resource-page h2[id] {
+  scroll-margin-top: 1.25rem;
+}
+
+.software-entry:target {
+  border-color: var(--home-accent);
+}
+
+.facility-map {
+  margin: 1.25rem 0 0;
+  padding: clamp(0.25rem, 1.5vw, 0.9rem);
+  background: #f0f5f4;
+  border: 1px solid var(--home-line);
+  border-radius: 0.9rem;
+}
+
+.facility-map__viewport {
+  overflow: hidden;
+  border-radius: 0.55rem;
+}
+
+.facility-map__viewport img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* The title and subtitle occupy the first 126 pixels of the 1805-pixel-wide source. */
+  margin: -6.98% 0 0;
+}
+
+.facility-map__action {
+  display: block;
+  margin: 0.45rem 0.35rem 0.15rem auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--home-accent);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.facility-map__action:hover {
+  text-decoration: underline;
+}
+
+.facility-map-dialog {
+  width: 96vw;
+  max-width: 1807px;
+  max-height: 92vh;
+  padding: 0;
+  border: 1px solid #d8e3df;
+  border-radius: 0.65rem;
+  color: var(--home-ink);
+}
+
+.facility-map-dialog::backdrop {
+  background: rgba(23, 53, 47, 0.6);
+}
+
+.facility-map-dialog form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+  padding: 0.65rem 1rem;
+}
+
+.facility-map-dialog__scroll {
+  max-height: calc(92vh - 4rem);
+  overflow: auto;
+}
+
+.facility-map-dialog .facility-map__viewport {
+  width: 1805px;
+}
+
+.facility-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.facility-list > li {
+  padding: 1rem;
+  background: #f3f7fa;
+  border: 1px solid var(--home-line);
+  border-radius: 0.65rem;
+  font-size: 0.9rem;
+}
+
+.facility-list--neutron > li {
+  background: #edf5f0;
+}
+
+.facility-list h3 {
+  margin: 0 0 0.15rem;
+  color: var(--home-ink);
+  font-size: 1.02rem;
+  line-height: 1.4;
+}
+
+.facility-list p,
+.facility-list ul {
+  margin: 0.5rem 0 0;
+}
+
+.facility-list ul {
+  padding-left: 1.12rem;
+}
+
+.facility-list li li + li {
+  margin-top: 0.3rem;
+}
+
+.facility-list .facility-location {
+  margin-top: 0;
+  color: var(--home-accent);
+  font-size: 0.82rem;
 }

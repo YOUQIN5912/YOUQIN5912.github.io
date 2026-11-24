@@ -37,7 +37,7 @@
 
 <!-- end custom head snippets -->
 
-{% if page.layout == "vasp-wiki" %}
+{% if page.layout == "vasp-wiki" or page.url == "/software/" %}
 <link rel="stylesheet" href="{{ '/assets/css/vasp-wiki.css' | relative_url }}">
 {% endif %}
 
