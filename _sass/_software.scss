@@ -241,9 +241,27 @@
   border-radius: 0.55rem;
 }
 
+.facility-map a {
+  width: 100%;
+  text-decoration: none;
+}
+
 .facility-map img {
   width: 100%;
   height: auto;
+  margin: 0;
+}
+
+.facility-map__action {
+  display: block;
+  margin: 0.45rem 0.35rem 0.15rem;
+  text-align: right;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.facility-map a:hover .facility-map__action {
+  text-decoration: underline;
 }
 
 .facility-list {
