@@ -71,6 +71,50 @@
       links:
         - label: Documentation
           url: https://xraypy.github.io/xraylarch/larix.html
+    - name: Data Processing with XAS Viewer
+      icon: film
+      description: XrayLarch video tutorials on using XAS Viewer for XANES and EXAFS analysis. The Larix guide provides a reference for the graphical interface and analysis panels.
+      links:
+        - label: Larch for XAFS Analysis (YouTube)
+          url: https://www.youtube.com/playlist?list=PLgNIl_xwV_vK4V6CmrsEsahNCAsjt8_Be
+        - label: Larix overview
+          url: https://xraypy.github.io/xraylarch/xasviewer/overview.html
+    - name: NSLS-II XAS Workshop (March 2026)
+      icon: graduation-cap
+      description: Course slides, example spectra and fitting files from the Brookhaven workshop. The FeS₂ example demonstrates EXAFS fitting in Artemis with FEFF paths.
+      links:
+        - label: Workshop materials
+          url: https://nsls2.github.io/spectroscopy-xas-workshops/March2026.html
+        - label: Course files (ZIP)
+          url: https://nsls2.github.io/spectroscopy-xas-workshops/_downloads/70db7019dbfd558a643283e540850e21/March2026.zip
+        - label: FeS₂ fitting example (PDF)
+          url: https://nsls2.github.io/spectroscopy-xas-workshops/_downloads/dc7658d29c9f9654fc396299135bd964/fes2.pdf
+    - name: Overview of XAS
+      icon: book
+      description: Elisa Borfecchia (University of Turin), ESRF XAS School 2026. An introduction to the information XAS provides about oxidation state and local structure.
+      links:
+        - label: Lecture slides (PDF)
+          url: /files/xas/overview-of-xas-borfecchia.pdf
+    - name: XAS Experiment — How to Avoid Common Mistakes
+      icon: clipboard-check
+      description: Kirill A. Lomachenko (ESRF), ESRF XAS School 2026. Practical guidance on preparing samples and choosing measurement conditions.
+      links:
+        - label: Lecture slides (PDF)
+          url: /files/xas/xas-experiment-common-mistakes-lomachenko.pdf
+    - name: XAS Data Processing (Conceptual)
+      icon: sliders-h
+      description: Davide Salusso (ESRF), ESRF XAS School 2026. The workflow covers energy calibration, scan alignment and merging, normalisation, background subtraction and Fourier transforms.
+      links:
+        - label: Lecture slides (PDF)
+          url: /files/xas/xas-data-processing-salusso.pdf
+    - name: Introduction to the EXAFS Technique — Exercises
+      icon: file-alt
+      description: Francesco d’Acapito (CNR-IOM). Hands-on exercises in preprocessing spectra, extracting EXAFS and refining structural models.
+      links:
+        - label: Exercise handout (PDF)
+          url: /files/xas/xas-exercises-6.pdf
+        - label: Author’s Zenodo resource
+          url: https://zenodo.org/records/18340528
 
 - id: modelling
   title: Atomistic modelling
